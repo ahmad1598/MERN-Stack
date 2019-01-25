@@ -1,0 +1,21 @@
+img {
+    width: 300px;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: black;
+}
+
+.firstJoke{
+    background-color: aqua;
+}
+.secondJoke {
+    background-color: blue;
+    color:orange;
+}
+.thirdJoke {
+    background-color: brown;
+    color:orchid;
+}
