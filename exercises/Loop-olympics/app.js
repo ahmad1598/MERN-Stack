@@ -82,7 +82,52 @@ for(let i = 0; i < peopleArray.length; i++){
 // [0, 0, 0]]
 let arr = [];
 for(let i = 0; i < 3; i++){
+    arr[i] = new Array(0 , 0 , 0);
+}
+
+//another solution:
+let arr = [];
+for(let i = 0; i < 3; i++){
+    arr[i] = [];
     for(let j = 0; j < 3; j++){
-        arr[i] = new Array(0 , 0 , 0);
+        arr[i][j] = 0;
     }
-} console.log(arr);
+} 
+
+//Create an array that mimics a grid like the following using for loops:
+
+// [[0, 0, 0], 
+// [1, 1, 1], 
+// [2, 2, 2]]
+let arr = [];
+for(let i = 0; i < 3; i++){
+    arr[i] = [];
+    for(let j = 0; j < 3; j++){
+        arr[i][j] = i;
+    }
+} 
+
+// Create an array that mimics a grid like the following using for loops:
+
+// [[0, 1, 2], 
+// [0, 1, 2], 
+// [0, 1, 2]]
+let arr = [];
+for(let i = 0; i < 3; i++){
+    arr[i] = [];
+    for(let j = 0; j < 3; j++){
+        arr[i][j] = j;
+    }
+} 
+
+//Given a grid like the previous ones, write a for loop that would change every number to an x.
+let arr = 
+[[0, 1, 2], 
+[0, 1, 2], 
+[0, 1, 2]];
+
+for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr.length; j++){
+        arr[i][j] = 'x';
+    }
+}
