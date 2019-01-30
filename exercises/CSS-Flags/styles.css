@@ -1,0 +1,21 @@
+body{
+    font-family: "Merriweather", serif;
+    font-size: 1.8rem;
+    line-height: 1.75em;
+}
+ul{
+    margin: 4rem auto;
+    max-width: 710px;
+}
+
+li{
+    margin: 5px;
+}
+li a {
+    text-decoration: none;
+    color: #60B2B0
+}
+li a:hover{
+    text-decoration: underline;
+    color: black;
+}

@@ -45,7 +45,9 @@ function capitalize(str){
 	for(let i = 0; i< space.length; i++){
 		space[i] = space[i].split('');
 		space[i][0] = space[i][0].toUpperCase();
-		space[i] = space[i].join('');
+        space[i] = space[i].join('');
+                //space[i] = space[i].charAt(0).toUpperCase() + space[i].slice(1);   
+        //the line above would be another solution for this problem
 }
 return space.join(' ');
 }
