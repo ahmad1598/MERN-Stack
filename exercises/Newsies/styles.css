@@ -54,6 +54,7 @@ img{
 .lastBox{
     grid-column: 2/4;
 }
+
 #lastImg{
     float: left;
     height: 400px;;

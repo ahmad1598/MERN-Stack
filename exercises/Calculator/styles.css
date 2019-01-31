@@ -1,0 +1,64 @@
+.main{
+    /* margin-top: 100px; */
+    margin-left: 330px;
+    background-color: #d6d6d6;
+    width: 50%;
+    height: 130px;
+    color: black;
+    border: 2px solid black;
+    line-height: 40px;
+    font-family: "PT Sans", sans-serif;
+    position: relative;
+}
+h2{
+    margin-left: 330px;
+    background-color: #f9bf3b;
+    width: 50%;
+    height: 35px;
+    color: black;
+    border: 2px solid black;
+    line-height: 40px;
+    font-family: "PT Sans", sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+button{
+    width: 60px;
+    height: 25px;
+    /* font-weight: bold; */
+    background: #3079ed;
+    color: white;
+    font-size: 17px;
+    border-radius: 4px;
+}
+
+input {
+    width: 125px;
+    height: 18px;
+}
+
+#multiplyButton{
+    margin-left: 10px;
+}
+#subtractButton{
+    margin-left: 10px;
+}
+#addButton{
+    margin-left: 10px;
+}
+
+
+section.firstSection {
+    margin-left: 50px;
+}
+
+
+section.secondSection {
+    margin-left: 50px;
+}
+
+
+section.thirdSection {
+    margin-left: 50px;
+}
