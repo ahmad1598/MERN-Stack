@@ -1,0 +1,52 @@
+html{
+    font-family: -system-ui,-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji",
+    "Segoe UI Emoji","Segoe UI Symbol";
+}
+form{
+    width: 40%;
+    padding: 15px;
+    margin-left: 20%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 20px;
+    line-height: 45px;
+    font-size: 20px;
+    background-image: linear-gradient(
+        to top right, #22a7f0, #52b3d9
+    );
+}
+
+form h1 , h3{
+    text-align: center;
+}
+
+.input{
+    height: 25px;
+    margin-left: 20px;
+    width: 75%;
+}
+#age{
+    margin-left: 75px;
+}
+
+.gender input{
+    margin-left: 43px;
+}
+.dietary{
+    margin-left: 10px;
+
+}
+
+.submit{
+    height: 35px;
+    width: 160px;
+    margin-left: 200px;
+    font-size: 24px;
+}
+
+ select {
+    height: 32px;
+    margin-left: 30px;
+    width: 200px;
+    font-size: 16px;
+}
