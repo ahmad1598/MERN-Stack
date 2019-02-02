@@ -1,3 +1,4 @@
+
 *{
     margin: 0%;
 }
@@ -8,7 +9,9 @@
     padding-top: 40px;
     font-size: 30px;
     position: relative;
-    color: red;
+    color: white;
+    background-image: 
+    linear-gradient(to top, #f08961, #830314);
 }
 img {
     float: left;
@@ -16,19 +19,13 @@ img {
     width: 139px;
     border-radius: 50%;
     margin-left: 50px;
-    /* opacity: 0.75; */
+
 }
-/* img:hover{
-    opacity: 1;
-} */
 .container{
     display: grid;
-    grid: 150px / auto;
+    grid-auto-rows: 30% 30% 30%;
     background-image: 
-    linear-gradient(45 deg, red, #f06d06);
-    /* background-color: #2196F3; */
-    /* opacity: 0.75; */
-    padding: 10px;
+    linear-gradient(to top, #fabe58, #f06d06);
     width: 95%;
     height: 600px;
     margin: auto;
@@ -37,7 +34,7 @@ img {
 }
 
 .goombas{
-    background-color: #fe1a1b;
+    /* background-color: #fe1a1b; */
     /* opacity: 0.75; */
     padding: 10px;
     width: 85%;
@@ -53,18 +50,19 @@ img {
     border-radius: 50%;
     border: 1px solid;
     box-shadow: 4px 6px 15px;
+
 }
 
 .bobOmbs{
-    background-color: #feebc7;
+    /* background-color: #feebc7; */
     /* opacity: 0.75; */
     padding: 10px;
     width: 85%;
-    height: 200px;
+    /* height: 200px; */
     margin: auto;
     /* box-shadow: 5px 10px 18px #888888; */
     border-radius: 13px;
-    margin-top: 46px;
+    /* margin-top: 46px; */
 }
 
 .bobOmbs img {
@@ -76,34 +74,34 @@ img {
     box-shadow: 4px 6px 15px;
 }
 .baddieHeader{
-    font-size: 70px;
-    margin-top: 55px;
-    margin-left: 332px;
+    font-size: 370%;
+    margin-left: 30%;
+    margin-top: 5%;
 }
 #goombaCoins{
-    margin-left: 570px;
+    margin-left: 45%;
     margin-top: -13px;
     font-size: 20px;
 }
 #bobOmbsCoins{
-    margin-left: 620px;
+    margin-left: 45%;
     margin-top: -13px;
     font-size: 20px;
 }
 
 #cheepCheepsCoins{
-    margin-left: 725px;
+    margin-left: 45%;
     margin-top: -13px;
     font-size: 20px;
 }
 
 
 .cheepCheeps{
-    background-color: #770438;
+    /* background-color: #770438; */
     /* opacity: 0.75; */
     padding: 10px;
     width: 85%;
-    height: 195px;
+    height: 100%;
     margin: auto;
     /* box-shadow: 5px 10px 18px #888888; */
     border-radius: 13px;
@@ -121,8 +119,7 @@ img {
 #goombaInput{
     height: 30%;
     width: 6%;
-    margin-left: 810px;
-    float: left;
+    float: right;
     margin-top: -60px;
     border-radius: 8px;
     font-size: 40px;
@@ -133,8 +130,7 @@ img {
 #bobOmbsInput{
     height: 30%;
     width: 6%;
-    margin-left: 810px;
-    float: left;
+    float: right;
     margin-top: -60px;
     border-radius: 8px;
     font-size: 40px;
@@ -145,11 +141,34 @@ img {
 #cheepCheepsInput{
     height: 30%;
     width: 6%;
-    margin-left: 810px;
-    float: left;
+    float: right;
     margin-top: -60px;
     border-radius: 8px;
     font-size: 40px;
     text-align: center;
     font-weight: bold;
+}
+
+.submit{
+    height: 40px;
+    width: 15%;
+    background: #f89406;
+    color: black;
+    font-size: 150%;
+    float: left;
+    margin-left: 290px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 9px;
+}
+
+.coinResult{
+    color:rgb(248, 2, 2);
+    float: right;
+    margin-right: 245px;
+}
+
+li {
+    display: inline;
+    padding: 0px 122px 0 150px;
+    text-transform: uppercase;
 }
