@@ -34,13 +34,10 @@ img {
 }
 
 .goombas{
-    /* background-color: #fe1a1b; */
-    /* opacity: 0.75; */
     padding: 10px;
     width: 85%;
     height: 200px;
     margin: auto;
-    /* box-shadow: 5px 10px 18px #888888; */
     border-radius: 13px;
 }
 .goombas img {
@@ -50,19 +47,14 @@ img {
     border-radius: 50%;
     border: 1px solid;
     box-shadow: 4px 6px 15px;
-
 }
 
 .bobOmbs{
-    /* background-color: #feebc7; */
-    /* opacity: 0.75; */
     padding: 10px;
     width: 85%;
-    /* height: 200px; */
     margin: auto;
-    /* box-shadow: 5px 10px 18px #888888; */
     border-radius: 13px;
-    /* margin-top: 46px; */
+
 }
 
 .bobOmbs img {
@@ -97,13 +89,10 @@ img {
 
 
 .cheepCheeps{
-    /* background-color: #770438; */
-    /* opacity: 0.75; */
     padding: 10px;
     width: 85%;
     height: 100%;
     margin: auto;
-    /* box-shadow: 5px 10px 18px #888888; */
     border-radius: 13px;
     margin-top: -22px;
 }
@@ -167,8 +156,190 @@ img {
     margin-right: 245px;
 }
 
-li {
-    display: inline;
-    padding: 0px 122px 0 150px;
-    text-transform: uppercase;
+footer{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    
+}
+
+
+/* ------------------------------  min-width: 320px ----------------- */
+@media (max-width: 800px){
+    .header{
+        box-shadow: 5px 10px 18px #888888;
+        text-align: center;
+        height: 80px;
+        width: 100%;
+        padding-top: 40px;
+        font-size: 15px;
+        position: relative;
+        color: white;
+        background-image: 
+        linear-gradient(to top, #f08961, #830314);
+    }
+    .header h1{
+        margin-left: 60px;
+    }
+
+    img {
+        float: left;
+        margin-top: -47px;
+        width: 90px;
+        border-radius: 50%;
+        margin-left: 20px;
+    }
+
+    .container{
+        display: grid;
+        grid-auto-rows: 30% 30% 30%;
+        background-image: 
+        linear-gradient(to top, #fabe58, #f06d06);
+        width: 95%;
+        height: 600px;
+        margin-left: 12px;
+        box-shadow: 5px 10px 18px #888888;
+        border-radius: 13px;
+        margin-top: 13px;
+    }
+
+    .goombas{
+        width: 85%;
+        height: 100px;
+        margin: auto;
+        border-radius: 13px;
+    }
+
+    .goombas img {
+        width: 90px;
+        margin-top: 30px;
+        height: 90px;
+        border-radius: 50%;
+        border: 1px solid;
+        box-shadow: 4px 6px 15px;
+        margin-left: -25px;
+    }
+
+    .bobOmbs{
+        width: 85%;
+        height: 100px;
+        margin: auto;
+        border-radius: 13px;
+        margin-top: 30px;
+    
+    }
+
+    .bobOmbs img {
+        width: 90px;
+        margin-top: 0px;
+        height: 90px;
+        border-radius: 50%;
+        border: 1px solid;
+        box-shadow: 4px 6px 15px;
+        margin-left: -25px;
+    }
+    .cheepCheepsHeader{
+        font-size: 30px;
+        margin-left: 82px;
+        margin-top: 50px;
+    }
+    .goombaHeader{
+        font-size: 30px;
+        margin-left: 82px;
+        margin-top: 50px;   
+    }
+    .bobOmbsHeader{
+        font-size: 30px;
+        margin-left: 82px;
+        margin-top: 25px;   
+    }
+
+    #goombaCoins{
+        margin-left: 180px;
+        margin-top: -8px;
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    #bobOmbsCoins{
+        margin-left: 180px;
+        margin-top: -8px;
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    
+    #cheepCheepsCoins{
+    margin-left: 180px;
+    margin-top: -3px;
+    font-size: 15px;
+    font-weight: lighter;
+    }
+
+    .cheepCheeps img {
+        width: 90px;
+        margin-top: 30px;
+        height: 90px;
+        border-radius: 50%;
+        border: 1px solid;
+        box-shadow: 4px 6px 15px;
+        margin-left: -25px;
+    }
+
+    #goombaInput{
+        width: 50px;
+        float: right;
+        margin-top: -60px;
+        border-radius: 8px;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        margin-right: -20px;
+    }
+    
+    #bobOmbsInput{
+        width: 50px;
+        float: right;
+        margin-top: -60px;
+        border-radius: 8px;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        margin-right: -20px;
+    }
+    
+    #cheepCheepsInput{
+ 
+        width: 50px;
+        float: right;
+        margin-top: -60px;
+        border-radius: 8px;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        margin-right: -20px;
+    }
+    
+    .submit{
+        height: 40px;
+        width: 140px;
+        background: #f89406;
+        color: black;
+        font-size: 150%;
+        float: left;
+        margin-left: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 1px 9px;
+    }
+    
+    .coinResult{
+        color:rgb(248, 2, 2);
+        float: right;
+        margin-right: 45px;
+    }
+    
+    footer{
+        display: flex;
+        justify-content: space-around;
+        font-size: 10px;
+        
+    }
 }
