@@ -3,6 +3,8 @@
     font-family: 'AvenirNext-Regular';
 }
 
+/* ----------------------- Header css ----------------------- */
+
 header {
     align-items: center;
     display: flex;
@@ -16,7 +18,7 @@ header {
     perspective: 100px;
   }
 
-  header:before {
+header:before {
     animation: fade-slide-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
     /*  forwards */
     background: linear-gradient(to bottom, #f03434,  #3a539b );
@@ -46,17 +48,17 @@ header:after {
     z-index: 0;
   }
 
-  @keyframes lineMove {
+
+/* animation for line */
+@keyframes lineMove {
     
     0%   {transform: rotateZ(180deg);}
     25%  {background-color: blue;}
     50%  {background-color: greenyellow;} 
     75%  {background-color: rgb(255, 72, 0);} 
-    /*100% {right: 0px;} */
-
   }
 
-  div.line1 {
+div.line1 {
     height: 2px;
     width: 107%;
     left: -5%;
@@ -64,10 +66,8 @@ header:after {
     position: absolute;
     top: 81.8%;
     background-color: #F9FCFF;
-    /* -webkit-transform: skewY(20deg); Safari 3-8 */
     transform: rotateZ(-4deg);
     animation: lineMove 2s 3;
-    
   }
 
   div.line2 {
@@ -78,36 +78,47 @@ header:after {
     position: absolute;
     top: 80.9%;
     background-color: #F9FCFF;
-    /* -webkit-transform: skewY(20deg); Safari 3-8 */
      transform: rotate(-4deg);
   } 
-  /* div.line3 {
-    height: 3px;
-    width: 760px;
-    left: -17.9%;
-    position: absolute;
-    top: 100%;
-    background-color: white;
-    /* -webkit-transform: skewY(20deg); Safari 3-8 */
-    /* transform: rotate(100deg); */
-  /* } */ 
-  /* div.line4 {
-    height: 3px;
-    width: 760px;
-    left: -19%;
-    position: absolute;
-    top: 100%;
-    background-color: white;
-    -ms-transform: skewY(20deg); /* IE 9 */
-    /* -webkit-transform: skewY(20deg); Safari 3-8 */
-    /* transform: rotate(110deg); */
-  /* } */ 
 
   .header-title{
-    color: white;
+    color: #013243;;
+    margin-top: -179px;
+    margin-left: -265px;
+  }
+
+  .header-title-first-part{
+    color: #f0f0d6;
+    position: absolute;
+    margin-top: -142px;
+    margin-left: -265px;
+  }
+  .second-part{
+    /* margin-left: -150px;
+    margin-top: -50px; */
+    margin-left: -310px;
+    margin-top: 200px;
+    font-size:100px;
+    transform: rotate(-4deg);
+    /* opacity: .50; */
+  }
+  #artist{
+    background: linear-gradient(to right, #f03434 0%, #330867 50%, #30CFD0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .profile{
+    position: absolute;
+    width: 500px;
+    border-radius: 50%;
+    right: 10%;
+    top:30%;
+    box-shadow: #020202 1px 0px 12px 2px;
+    opacity: .5;
+
   }
  
-  /* Animations */
+  /* Animations for main  */
 
 @keyframes fade-slide-down {
     0% {
@@ -120,22 +131,22 @@ header:after {
     }
   }
 
-
 header .main-nav{
       position: fixed;
-      display: flex;
+      display: block;
       flex-direction: column;
       /* color: white; */
       justify-content: flex-end;
       top: 0%;
+      box-shadow: 0px -2px 30px;
   }
 
 
 .main-nav li{
       display: inline-block;
       font-family: 'AvenirNext-Regular';
-      font-size: 13.5px;
-      margin-right: 90px;
+      font-size: 16.5px;
+      margin-right: 76px;
       padding: 35px 8px;
       
   }
@@ -163,6 +174,7 @@ a:hover{
 
   }
 
+/* keyframe for big H */
 @keyframes mymove {
     0%   {top: 0px;}
     25%  {top: 200px;}
@@ -172,20 +184,21 @@ a:hover{
 
   }
 
-.bigH{
+#bigH{
     position: absolute;
     color: #013243;
-    font-size: 100px;
+    font-size: 110px;
     -webkit-text-stroke: 1px white;
     animation: mymove 2s ;
-    margin-left: -70px;
-    margin-top: -63px;
+    margin-left: -79px;
+    margin-top: -74px;
   }
 
+/* social media */
 .media{
   position: absolute;
-  top: 58%;
-  left: 47%;
+  top: 6%;
+  left: 8%;
   transform: translate(-53%, -50%);
 
   }
@@ -195,7 +208,7 @@ a:hover{
   /* margin:10px 30px; */
   display: inline-block;
   font-size: 35px;
-  padding: 20px 20px;
+  padding: 0px 11px; 
   border-radius: 50%;
   /* border: 1px solid #fff; */
   color: #fff;
@@ -208,53 +221,239 @@ a:hover{
   transition: .5s;
 }
 
-footer{
-  position: absolute;
-  bottom: 0%;
-  width: 100%;
-  height: 70px;
-  box-shadow: 1px -1px 48px #3a539b;
-  text-align: center;
-  
+/* --------------------- Main-Content css ---------------------------- */
+.first-main-text{
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 20px;
+  padding: 10px;
+  height: 100%;
+  width: 30%;
+  box-shadow: 0px 0px 15px;
+  text-align: justify;
+  /* border-radius: 5px; */
 }
-footer li{
-  list-style: none;
-  display:inline-block;
-  margin-right: 30px;
-  
-  
-}
-  
 
-@media (max-width:914px) {
-    .main-nav li{
-        display: inline-block;
-        font-family: 'AvenirNext-Regular';
-        font-size: 12px;
-        margin-right: 20px;
-        padding: 22px 0px;
-        
-    }
+
+
+
+
+/* ----------------------- Footer css ----------------------- */
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+
+.footer-left, .footer-center, .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-left{
+	width: 40%;
+}
+
+.footer-ahmad-name{
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 5;
+
+}
+
+/* Awards and Recognition */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 30px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #015eff;
+}
+
+/* Footer links */
+
+.footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+}
+
+/* Footer Center */
+
+.footer-center{
+	width: 35%;
+}
+
+.footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+ .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-right{
+	width: 20%;
+}
+
+
+
+.footer-icons{
+	margin-top: 120px;
+}
+
+
+.footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* ----------------------- Media - max-width:400px ----------------------- */
+@media(max-width:400px){
+  
+.header-title{
+    margin-top: -130px;
+    margin-left: 35px;
+    font-size: 40px;
+  }
+  
+.header-title-first-part{
+    
+    position: absolute;
+    margin-top: -128px;
+    margin-left: -5px;
+    font-size: 30px;
+  }
+.second-part{
+    margin-left: -20px;
+    margin-top: 270px;
+    font-size:45px;
+  }
+#bigH{
+    font-size: 70px;
+    margin-left: -50px;
+    margin-top: -30px;
   }
 
+  #artist{
+    background: linear-gradient(to right, #f701a5 0%, #f6fa00 50%, rgb(150, 0, 70) 100%);
+    -webkit-background-clip: text;
+  }
 
-  /* 
-  immersive, intensive, accelerate
-  I am able to do your work and pass your interview
-  training program 
-  web development program
-  immersive program
-  certificate program 
-  focusocing on the MERN stack
+.profile{
+    width: 300px;
+    top:58%;
+    right: 5%;
+} 
 
-  - decided to follow to my passion 
-  - excited to build website
-  - I am a Full stack web developer and have a deep love for building and creating.
-  - I am a hard working individual who is very motivated to learn and grow
-  - I like to create things and solve problems, 
-   - I am a Full Stack Engineer who loves building new things. I have a great foundation in Computer Science
+.main-nav li{
+      font-size: 15px;
+      margin-right: 55px;
+      padding: 15px 1px;
+}
+
+/* social media */
+.media{
+  top: 18%;
+  left: 24%;
+
+}
+.media li{
+  font-size: 25px;
+}
   
+}
 
-   I am a full stack web developer and hard working indivifual who is very motivated to learn and grow. I have deep love to create things and solve problems
-   I have a great foundation in Computer science. 
-  */
+div.line1 {
+  top: 86.8%;
+}
+
+div.line2 {
+  top: 85.9%;
+} 
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+  }
+  .footer-ahmad-name{
+    position: absolute;
+    margin-top: 400px;
+    margin-left: 65px;
+    color: #f4f4f4;
+  
+  }
+}
