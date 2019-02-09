@@ -280,7 +280,7 @@ a:hover{
 
 
 /* ----------------------- Media - min-width:320px  and max-width:425px----------------------- */
-@media(min-width:320px) and (max-width:425px){
+@media(min-width:320px) and (max-width:767px){
   
   .header-title{
     width:400px;
@@ -314,14 +314,6 @@ a:hover{
   .media li{
     font-size: 25px;
   }
-    
-  .line1 {
-    top: 86.8%;
-  }
-  
-  .line2 {
-    top: 85.9%;
-  } 
   
   }
 
@@ -378,4 +370,35 @@ a:hover{
     opacity: 0;
   }
   
+}
+
+@media(min-width:768px) and (max-width:1024px){
+
+  .header-title{
+    width:400px;
+    margin-left: -300px;
+    margin-top: -10px; 
+    font-size: 13px;
+    }
   
+  .profile{
+      width: 350px;
+      top:40%;
+  } 
+  
+  .main-nav li{
+      font-size: 15px;
+      margin-right: 30px;
+      padding: 20px 10px;
+  }
+  
+  /* social media */
+  .media{
+    top: 15%;
+    left: 24%;
+  }
+  
+  .media li{
+    font-size: 25px;
+  }
+}
