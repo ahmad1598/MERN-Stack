@@ -99,70 +99,34 @@ var voters = [
     {name: 'Zack', age: 19, voted: false}
 ];
 
-function voterResults(arr) {
+function voterResults(arr) {    
     return arr.reduce(function(final, item){
         if(item.age >= 18 && item.age <= 25){
+            final.youth++;
             if(item.voted){
-                if(final["youngVotes"]){
-                    final["youngVotes"]++;
-                } else{
-                    final["youngVotes"] = 1;
-    
-                }
-            } else{
-                if(final["youth"]){
-                    final["youth"]++;
-                } else{
-                    final["youth"] = 2;
-    
-                }
-
+                final.youngVotes++;
             }
-            
         }
-
         if(item.age >= 26 && item.age <= 35){
+            final.mids++;
             if(item.voted){
-                if(final["midVotes"]){
-                    final["midVotes"]++;
-                } else{
-                    final["midVotes"] = 1;
-    
-                }
-            } else{
-                if(final["mids"]){
-                    final["mids"]++;
-                } else{
-                    final["mids"] = 2;
-    
-                }
-            }
-            
+                final.midVotes++;
         }
+    }
+
         if(item.age >= 36 && item.age <= 55){
+            final.olds++;
             if(item.voted){
-                if(final["oldVotes"]){
-                    final["oldVotes"]++;
-                } else{
-                    final["oldVotes"] = 1;
-    
-                }
-            }
-            else{
-                if(final["olds"]){
-                    final["olds"]++;
-                } else{
-                    final["olds"] = 2;
-    
-                }
-            }
-            
+                final.oldVotes++;
+        }
+
         }
         return final;
-   }, {})
+    },{youngVotes:0,youth:0,midVotes:0,mids:0,oldVotes:0,olds:0})
 }
+    
 
-console.log(voterResults(voters)); // Returned value shown below:
+// console.log(voterResults(voters)); // Returned value shown below:
 /*
 { youngVotes: 1,
   youth: 4,

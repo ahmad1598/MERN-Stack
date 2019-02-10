@@ -1,5 +1,5 @@
 {
-  "name": "Colossal-Adventure",
+  "name": "ColossalAdventure",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "console-visualizer": "^1.0.6",
-    "readline-sync": "^1.4.9"
+    "readline-sync": "^1.4.9",
+    "sleep": "^6.0.0"
   }
 }

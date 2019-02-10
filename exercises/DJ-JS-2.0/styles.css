@@ -1,0 +1,92 @@
+
+.box-1{
+    width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
+    background-color: red;
+    transition: all 3s;
+}
+.box-2{
+    width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
+    background-color: red;
+    transition: all 2s;
+    
+}
+.box-3{
+    width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
+    background-color: red;
+    transition: all 3s;
+}
+.box-4{
+    width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
+    background-color: red;
+    transition: all 2s;
+}
+.box-5{
+    width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
+    background-color: red;
+    transition: all 1s;
+}
+.box-6{
+    width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
+    background-color: red;
+    transition: all 1s;
+}
+
+
+.box-1:hover{
+    background-color: blue;
+    width: 300px;
+    border:2px dotted goldenrod;
+    border-top-left-radius: 30%;
+    opacity: 0;
+}
+.box-2:hover{
+    box-shadow: 1px 0px 9px purple;
+    border-bottom-left-radius: 18%;
+    border-top-right-radius: 18%;
+    opacity: .75;
+    width: 500px;
+    background: chocolate;
+}
+.box-3:hover{
+    background-color: blue;
+    width: 300px;
+    border:2px solid goldenrod;
+    border-top-right-radius: 30%;
+    opacity: .5;
+    height: 20px;
+}
+.box-4:hover{
+    position: absolute;
+    padding: 40px;
+    margin: 30px;
+    background: darkorange;
+    width: 600px;
+
+}
+.box-5:hover{
+    margin-left: 300px;
+    width: 400px;
+    background: darkseagreen;
+
+}
+.box-6:hover{
+    background: linear-gradient( green, yellow);
+    width: 500px;
+    opacity: .85;
+    border-radius: 50%;
+    margin-left: 200px;
+
+    
+}
