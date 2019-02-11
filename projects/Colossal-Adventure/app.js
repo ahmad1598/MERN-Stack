@@ -3,171 +3,392 @@ var sleep = require('sleep');
 
 let Reset = "\x1b[0m"
 let Bright = "\x1b[1m"
-let Dim = "\x1b[2m"
-let Underscore = "\x1b[4m"
-let Blink = "\x1b[5m"
 let Reverse = "\x1b[7m"
-let Hidden = "\x1b[8m"
-
 let FgBlack = "\x1b[30m"
 let FgRed = "\x1b[31m"
 let FgGreen = "\x1b[32m"
-let FgYellow = "\x1b[33m"
-let FgBlue = "\x1b[34m"
-let FgMagenta = "\x1b[35m"
 let FgCyan = "\x1b[36m"
-let FgWhite = "\x1b[37m"
-
-let BgBlack = "\x1b[40m"
 let BgRed = "\x1b[41m"
-let BgGreen = "\x1b[42m"
-let BgYellow = "\x1b[43m"
 let BgBlue = "\x1b[44m"
-let BgMagenta = "\x1b[45m"
 let BgCyan = "\x1b[46m"
-let BgWhite = "\x1b[47m"
 
 
 player = {
     name: '',
-    hp: 100,
+    health: 10,
     inventory: []
 }
-
-var threetab = '\t\t\t';
+var threetab = '\t\t\t'
 var fourtab = '\t\t\t\t';
 var fivetab = '\t\t\t\t\t';
-
+var sixtab = '\t\t\t\t\t\t';
+let gameOver = false;
+var enemyName;
 var specialItem = ['INTELLECT','ARMOR','STAMINA','STRIKE','HASTE'];
+
+function walk(){
+    console.log(`${fivetab}walking...`);
+    walkPrint();
+    var rand = Math.floor(Math.random() * 4);
+    if(rand === 1){
+        enemyAttack();
+        console.clear();
+        console.log(fivetab + FgGreen + 'Enemy ' + Bright +FgRed+ enemyName.name + Reset + FgGreen +' appeared');
+        fight();
+}
+    else{
+        print();
+    }
+}
+
+function EnemyCreation(name,health){ 
+    this.name = name;
+    this.health = health;
+    this.power = function(){
+        let power = Math.floor(Math.random() * 7 + 3);
+        return power;
+    }
+}
+
+function enemyAttack(){
+    var chance = Math.floor(Math.random() * 5);
+    switch(chance){
+        case 0:  
+            enemyName = new EnemyCreation('Murlocs' , 7);
+            break;
+        case 1:  
+            enemyName = new EnemyCreation('Reapers' , 4);
+            break;
+        case 2:  
+            enemyName = new EnemyCreation('Dark Ganon' , 6);
+            break;
+        case 3:  
+            enemyName = new EnemyCreation('Darkspawn' , 8);
+            break;
+        case 4:  
+            enemyName = new EnemyCreation('The Daedra' , 9);
+            break;
+    }
+    return enemyName;
+}
+
+
+function fight(){
+    while(player.health > 0 && enemyName.health > 0){
+        console.log(Reverse);
+        var playerOption = ['Fight','Run'];
+        console.log(FgGreen + Reverse )
+        let fightOrRun = ask.keyInSelect(playerOption,"Would you like to Fight or Run?" + Reset);
+        if(fightOrRun === 0){
+            attackEnemy();
+        } else{
+            run();
+        }
+        console.log(Reset);
+    }
+    if(enemyName.health <= 0){
+        enemyDie()
+    }
+    if(player.health <= 0){
+        console.clear();
+        console.log(FgRed +  Bright);
+        playerDiePrint();
+        console.log(Reset);
+        print();
+        gameOver = true;
+    }
+}
+
+function attackEnemy(){
+    let playerAttackPower = Math.floor(Math.random() * 4 + 1);
+    console.log(`${sixtab}${Bright}${BgBlue}${FgBlack}${Reverse}Your Attack Power is: ${playerAttackPower} ${Reset}`);
+    enemyName.health -= playerAttackPower;
+    console.log(`${fourtab}${Bright}${BgBlue}${FgBlack}${Reverse} ************ ${player.name} IS ATTACKING  ${enemyName.name} ************** ${Reset}`);
+    console.log(`${fourtab}${Bright}${BgBlue}${FgBlack}${Reverse} ${player.name} Hit ${enemyName.name} And ${player.name} ACHIEVED ${playerAttackPower} Health Point ${Reset}`);
+    let enemyPower = enemyName.power();
+    player.health = player.health - enemyPower;
+    console.log(`${Bright}${fourtab}${BgRed} ************ YOU ARE UNDER ATTACK by ${enemyName.name} *********** ${Reset}`);
+    console.log(`${Bright}${fourtab}${BgRed} ${enemyName.name} Hit ${player.name} And ${enemyName.name} ACHIEVED ${enemyPower} Health Point ${Reset}`);
+
+}
+
+function run(){
+    var runRandomNumber = Math.floor(Math.random() * 2);
+    if(runRandomNumber === 0){
+        console.log(Bright);
+        runPrint();
+        console.log(Reset);
+    } else {
+        console.log(`${fourtab} ${Bright} ${FgRed} You were not able to run. ${Reset}`);
+        sleep.sleep(1);
+        print();
+
+        //if the player won't get the chance to run , first: the new enemy will be created and next attackEnemy() will be call
+        enemyAttack();
+        console.clear();
+        console.log(fivetab + FgGreen + 'Enemy ' + Bright +FgRed+ enemyName.name + Reset + FgGreen +' appeared');
+        attackEnemy();
+    }
+}
+
+function enemyDie(){
+    console.log(FgGreen + Bright);
+    youWonPrint();
+    console.log(Reset);
+    player.health +=10;
+    var rand = (Math.floor(Math.random() * specialItem.length ));
+    player.inventory.push(specialItem[rand]);
+    console.log(`${threetab}You got ${BgCyan}${Bright}${FgRed} [10] ${Reset} Extra Health Points, and ${Bright}${BgCyan}${FgRed} ${specialItem[rand]} ${Reset} as a SPECIAL GIFT ITEM.` )
+}
+
+
+function print(){
+    console.log('\n');
+    console.log(Reverse);
+    console.log(threetab+'|______________________________________________________________________|');
+    console.log(threetab+`${FgRed}***\tPlayer : ${player.name}\t\t\t Your Health :${player.health}\n`);
+    console.log(threetab+`${FgRed}***\tInventory: ${player.inventory} ${Reset}`);
+    console.log(threetab+`${Reverse}|______________________________________________________________________|`);
+    console.log(Reset);
+    console.log('\n');
+}
+
+// ________________________________________ YOU WON print __________________________________
+function youWonPrint(){
+    console.log("  **")
+    console.log("   **       **    ******      **     **       **               **    ********        ***      *** ")
+    console.log("    **    **    **       **   **     **       **               **   **       **      ** *     ** ")
+    console.log('     ** **     **        **   **     **        **              **  **         **     **  *    ** ')
+    console.log('      **      **         **   **     **         **      **     **  **         **     **   *   ** ')
+    console.log('      **      **         **   **     **          **    ** **   **  **         **     **    *  ** ')
+    console.log('      **       **       ***   **    **            **  **   ** **   **        **      **     * ** ')
+    console.log('      **        *********       ***                **        **     *********       ***      *** ')
+    console.log('_____________________________________________________________________________________________________')
+}
+
+// ________________________________________ RPG GAME print __________________________________
+function gamePrint(){
+
+    console.log('    ************    ************    /***********               /**********        *              *              *    *||||||||   ');
+    console.log('    **|         \\  **         **  **                          **               ** **          ** **           * *   **          ');
+    console.log('    **|         //  **         **  **                          **               **  **         **  **         *  **  **          ');
+    console.log('    **|        //   **         **  **                          **               **   **        **   **       *   **  **          ');
+    console.log('    **|       //    **>>>>>>>>**   **      *******             **     *******   ** ** **       **    **     *    **  **|||||||   ');
+    console.log('    *********//     **             **          **              **          **   **     **      **     **   *     **  **          ');
+    console.log('    **|  **         **              **        **                **        **    **      **     **      ** *      **  **          ');
+    console.log('    **|   \\**      **               **      **                  **      **     **       **    **        *       **  **          ');
+    console.log('    **|    \\**     **                 *******                     *******      **        **   **                **  **|||||||   ');
+    console.log('_________________________________________________________________________________________________________________________________');
+}
+
+// ________________________________________ WELCOME print __________________________________
+function welcomePrint(){
+    console.log('\t\t\t **            **   |||||||   ***          *******   ******     **           **   *******    ');
+    console.log('\t\t\t **            **   **        ***         **        **____**    ** *       * **   **         ');
+    console.log('\t\t\t **            **   **        ***        **        **______**   **  *     *  **   **         ');
+    console.log('\t\t\t **      **    **   **|||||   ***        **        **______**   **   *   *   **   *******    ');
+    console.log('\t\t\t  **    ** **  **   **        ***        **         **____**    **    * *    **   **          ');
+    console.log('\t\t\t   **  **   ** **   **        ***        **          **__**     **     *     **   **          ');
+    console.log('\t\t\t    **        **    |||||||   *********    *******    ****      **           **   *******     ');  
+}
+
+// ________________________________________ YOU DIED print __________________________________
+function playerDiePrint(){
+
+    console.log("** ");
+    console.log(" **      **     ******      **     **             *********     ***   ********   *********   ");
+    console.log("  **    **    **       **   **     **             ***      **   ***   ***        ***      ** ");
+    console.log("   ** **     **        **   **     **             ***       **  ***   ***        ***       ** ");
+    console.log("    **       **        **   **     **             ***       **  ***   ********   ***        **");
+    console.log("    **       **        **   **     **             ***      **   ***   ***        ***       ** ");
+    console.log("    **        **      ***    **    **             ***     **    ***   ***        ***      **  ");
+    console.log("    **          ******         ***                *********     ***   ********   *********    ");
+}
+
+
+
 console.clear();
-//ask user for name 
-player.name = ask.question(`${fivetab} ${Bright}${FgCyan}What is your name? ${FgRed}`);
+gamePrint();
+player.name = ask.question(`\n${sixtab} ${Bright}${FgCyan}What is your name? ${FgRed}`);
 console.log(Reset)
 sleep.sleep(1);
 console.clear();
-//FIX ME-  YOU NEED TO PRINT FUN MESSAGE TO PLAYER.
-console.log(`${fourtab}${BgGreen}${FgGreen}........................................................................${Reset}`)
-console.log(`${fourtab}${BgGreen}${FgGreen}........................................................................${Reset}`)
-console.log(`${fourtab}${FgRed}${BgGreen}${Bright} Hi ${player.name} , welcome. I will put some fun text greeting late${Reset}`);
-console.log(`${fourtab}${BgGreen}${FgGreen}........................................................................${Reset}`)
-console.log(`${fourtab}${BgGreen}${FgGreen}........................................................................${Reset}`)
-
-walk(); //after asking user for name and print the name out. it is time to ask user to walk.
-
-// ***************************************** WALK FUNATION *****************************************
-function walk(){
-    var keyW = ask.keyIn(`push 'w' to walk... `,{limit: 'wW'}); //ask user to push "w" to walk
-    console.log(`Player walking...`); // FIX ME - I NEED TO PRINT OUT SOME COOL WALKING HERE.
-    var rand = Math.floor(Math.random() * 4); //create a random number between 0-3
-    if(rand === 1){ //check if the 1/4 of the random number happend
-        fight(); //If a wild enemy appears
-    } else{
-        console.log(`${fourtab}You didn’t run into a monster`);
-        print(); // will print
+console.log(FgGreen+sixtab + Reverse + ' Hi '+ player.name + ' ' + Reset);
+console.log(FgRed);
+welcomePrint();
+console.log(Reset);
+while(!gameOver){
+    var keyW = ask.keyIn(`${fivetab}push 'w' to walk... `,{limit: 'wW'});
+    if(keyW.toLowerCase() === 'w'){
         walk();
+        
     }
- }
-
-// ***************************************** PRINT FUNATION *****************************************
-function print(){
-    console.log(`${fourtab}${player.name} with ${player.hp} amount of HP (Health points) and has ${player.inventory} items in Inventory.`);
+    //FIX ME - SOMETIMES GIVING ME A ERROR - health undefined
+    // if(enemyName.health === 0){
+    //     enemyDie();
+    // }
 }
 
-// ***************************************** FIGHT FUNATION *****************************************
- function fight(){
-     while(player.hp > 0){
-         playerOption = ['fight', 'run']
-        //ask user to either fight or run
-        let fightOrRun = ask.keyInSelect(playerOption,`${fourtab}, Would you like to fight or run?`);
-        if(fightOrRun === 1){
-            //run
-            run(); //call run function and player will have 50% of chance to run
-         } else if(fightOrRun === 0){
-            //fight
-            //attackEnemy
-            attackEnemy(); // user will attack enemy
-    
-            // **************** I think you need to move these two function *****************************************************
-            //call enemyCreation to create a random enemy, because each time user attacked, enemy should attack back.
-            enemyCreation(); // will create a random enemy with random min and max attack power
-            enemyAttack(); // after we create a random enemy, it is time for enemy to attack.
-         } else{
-             console.log('NO OTHER OPTION, YOU HAVE TO CHOOSE FIGHT OR RUN')
-         } 
-     }       
- }
 
-// ***************************************** RUN FUNATION *****************************************
- function run(){
-    var runRandomNumber = Math.floor(Math.random() * 2 + 1); //create random number between 1-2
-    if(runRandomNumber === 1){ //50% chance of escaping
-        console.log(`${fourtab}You successfully got away and continue walking`);
-        //FIX ME : WHAT SHOULD I DO HERE
-    } else{
-        console.log(`${fourtab}You were not able to run.`);
-        //FIX ME here I need to call one of the attack function
-        //here maybe you can call attackEnemey() funciton OR enemyAttack() function
-        // attackEnemy();
-        enemyAttack();
-    }
- }
 
- // ***************************************** ATTACK-ENEMY FUNATION *****************************************
- function attackEnemy(){
-    //here player will attack enemy
-    //choose a random attack number between a min and max
-    let min = 10;
-    let max = 50;
-    let playerAttackPower = Math.floor(Math.random() * max + min); // create a random between min and max
-    // console.clear();
-    console.log(`Your Attack Power is: ${playerAttackPower}`); // let the player know what attack power is
-    console.log(`${fourtab}${BgRed} ************ YOU ARE ATTACKING ************** ${Reset}`);
-    // sleep.sleep(1);
-    //first check enemy's HP and see if enemy has enough HP to reduce. else I need to call enemyDie() function and let player know that they killed enemy
-    //reduce some HP from enemy
-    //add that HP to the player
 
-    console.log(`${BgRed} ************ YOUR ACHIEVED 20 HP ************** ${Reset}`);
+// ________________________________________ walking print __________________________________
 
-    //here I want to call enemyAttack()
-    enemyAttack();
- }
- 
- // ***************************************** ENEMY-ATTACK FUNCTION *****************************************
- function enemyAttack(){
-     let enemyName = enemyCreation();
-    //here enemy will attack player
-    let min = 10;
-    let max = 60;
-    let enemyAttackPower = Math.floor(Math.random() * max + min); // create  a random between min and max
-    console.log(`************ YOU ARE UNDER ATTACK by ${enemyName} and HAS ${enemyAttackPower} ATTACK POWER **************`);
+
+
+function walkShape1(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t   o                   ");
+    console.log("\t\t\t  /|\\                 ");
+    console.log("\t\t\t  / \\                 ");
+    console.log("\t\t\t=====================");
+}
+function walkShape2(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t     o               ");
+    console.log("\t\t\t    (|\\             ");
+    console.log("\t\t\t    / >             ");
+    console.log("\t\t\t=====================");
+}
+function walkShape3(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t     \\o/             ");
+    console.log("\t\t\t        |           ");
+    console.log("\t\t\t      / \\           ");
+    console.log("\t\t\t=====================");
+}
+function walkShape4(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t         o           ");
+    console.log("\t\t\t        (|\\         ");
+    console.log("\t\t\t        / >         ");
+    console.log("\t\t\t=====================");
+}
+function walkShape5(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t         __o__          ");
+    console.log("\t\t\t           |         ");
+    console.log("\t\t\t          / \\         ");
+    console.log("\t\t\t=====================");
+}
+function walkShape6(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t             o      ");
+    console.log("\t\t\t            (|\\    ");
+    console.log("\t\t\t            / >    ");
+    console.log("\t\t\t=====================");
+}
+function walkShape7(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t                 /o   ");
+    console.log("\t\t\t                 /| ");
+    console.log("\t\t\t                /\\ ");
+    console.log("\t\t\t=====================");
+}
+
+function walkShape8(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t                     ");
+    console.log("\t\t\t                     ");
+    console.log("\t\t\t                     ");
+    console.log("\t\t\t=====================");
+}
+
+
+function walkPrint(){
+    sleep.msleep(700);
     console.clear();
- }
- 
- // ***************************************** PLAYER-DIE FUNATION *****************************************
- function die(){
-     console.log('cool death message'); //FIX ME - I need to create a cool message for game over;
- }
- 
- // ***************************************** ENEMY-DIE FUNATION *****************************************
- function enemyDie(){
-    console.log('wow, You killed your enemy, awesome, here is a special gift for you.');
-    player.hp += 100; // will give player 100 hp
-    var rand = (Math.floor(Math.random() * specialItem.length )); // create a random number on the specialItem array's index
-    player.inventory.push(specialItem[rand]); // will push that special item to the player's inventory
-    console.log(`Congras.... , By killing this enemy, you got \x1b[46m[100]${Reset} Health Points, and \x1b[45m ${specialItem[rand]} ${Reset} as a SPECIAL GIFT ITEM.` )
-    
- }
+    walkShape1();
+    sleep.msleep(700);
+    console.clear();
+    walkShape2();
+    sleep.msleep(700);
+    console.clear();
+    walkShape3();
+    sleep.msleep(700);
+    console.clear();
+    walkShape4();
+    sleep.msleep(700);
+    console.clear();
+    walkShape5();
+    sleep.msleep(700);
+    console.clear();
+    walkShape6();
+    sleep.msleep(700);
+    console.clear();
+    walkShape7();
+    sleep.msleep(700);
+    console.clear();
+    walkShape8();
+    console.clear();
+};
 
- // ***************************************** ENEMY-CREATION FUNATION *****************************************
- function enemyCreation(){
-     //anemy should be random
-    //create an array of maybe 3 or 4 enemy names
-    let enemyArray = ['enemy-1','enemy-2','enemy-3','enemy-4'];
-    //make a random number to pich one of those anemy each time that I call function
-    randomEnemy = Math.floor(Math.random() * enemyArray.length);
-    var enemyName = enemyArray[randomEnemy]; // will save that random enemy to the enemy variable
-    return enemyName;
-    // print out the enemy
-    //make a min and max random attack power for enemy
+
+
+
+// ---------------------------------------- RUN function ---------------------------------------------
+function runShape1(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t o                   ");
+    console.log("\t\t\t/|\\                 ");
+    console.log("\t\t\t/ |                 ");
+    console.log("\t\t\t=====================");
+}
+function runShape2(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t   |o/               ");
+    console.log("\t\t\t    |                ");
+    console.log("\t\t\t   / \\              ");
+    console.log("\t\t\t=====================");
+}
+function runShape3(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t      o\\           ");
+    console.log("\t\t\t      |\\           ");
+    console.log("\t\t\t       /\\           ");
+    console.log("\t\t\t=====================");
+}
+function runShape4(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t           o         ");
+    console.log("\t\t\t          (|\\       ");
+    console.log("\t\t\t          / >        ");
+    console.log("\t\t\t=====================");
+}
+function runShape5(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t                 /o   ");         
+    console.log("\t\t\t                 /| ");          
+    console.log("\t\t\t                /\\ ");          
+    console.log("\t\t\t=====================");
+}
+function runShape6(){
+    console.log("\t\t\t=====================");
+    console.log("\t\t\t                     ");
+    console.log("\t\t\t                     ");
+    console.log("\t\t\t                     ");
+    console.log("\t\t\t=====================");
+}
+
+function runPrint(){
+    sleep.msleep(400);
+    console.clear();
+    runShape1();
+    sleep.sleep(1);
+    console.clear();
+    runShape2();
+    sleep.sleep(1);
+    console.clear();
+    runShape3();
+    sleep.sleep(1);
+    console.clear();
+    runShape4();
+    sleep.sleep(1);
+    console.clear();
+    runShape5();
+    sleep.sleep(1);
+    console.clear();
+    runShape6();
+    sleep.sleep(1);
+    console.clear();
 }
