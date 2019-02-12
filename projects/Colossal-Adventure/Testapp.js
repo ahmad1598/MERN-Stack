@@ -28,6 +28,7 @@ let BgCyan = "\x1b[46m"
 let BgWhite = "\x1b[47m"
 
 
+
 player = {
     name: '',
     hp: 10,
@@ -187,3 +188,4 @@ function EnemyCreation(name,hp){
 //     // print out the enemy
 //     //make a min and max random attack power for enemy
 // }
+

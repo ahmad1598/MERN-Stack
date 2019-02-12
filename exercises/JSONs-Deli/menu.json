@@ -1,0 +1,95 @@
+{
+    "title": "JSON's Deli",
+    "menu": {
+
+        "appertizers": [
+            {
+                "name": "breadsticks",
+                "ingredients":["bread","sticks"],
+                "descreption":"yummy bread-sticks"
+            },
+            {
+                "name":"salad",
+                "ingredients":["lettuce","more lettuce"],
+                "descreption":"just a lot of lettuce"
+            },
+            {
+                "name":"Hot Cheesy Philly Cheesesteak Dip",
+                "ingredients":["8 ounces cream cheese softened.","1 ounce package Ranch dressing mix.","3 ounce container prepared bacon bits."],
+                "descreption":"Hot dips are a great addition to any playoff party "
+            }
+        ],
+
+        "cold sandwiches":[
+            {
+                "name": "Golden-Lover Turkey",
+                "ingredients":["1 thin whole-grain sandwich bun","KRAFT Mayo with Olive Oil","1/2 cup sliced grilled portobello mushroom","2 roasted red pepper strips","2 oz. OSCAR MAYER CARVING BOARD Oven Roasted Turkey Breast","1 KRAFT Big Slice Swiss Cheese Slice"],
+                "descreption":""
+            },
+            {
+                "name": "Chicken Club Salad",
+                "ingredients":["grape tomatoes","sliced avocado","cheddar","Asiago"],
+                "descreption":"(1010/540 cal), 100% antibiotic-free chicken breast"
+            },
+            {
+                "name": "Nutty Mixed-Up Salad",
+                "ingredients":["organic field greens", "grapes", "feta", "nuts", "dried cranberries", "raisins"," pumpkin seeds"," organic apples"],
+                "descreption":"(780/430 cal) Grilled, 100% antibiotic-free chicken breast"
+            }
+        ],
+
+        "hot sandwiches":[
+            {
+                "name": "Zucchini Grillini",
+                "ingredients":["Roasted zucchini", "Muenster", "organic spinach", "red onions", "Roma tomatoes", "kalamata olives", "roasted red pepper hummus", "toasted on olive oil-basted multigrain wheat"],
+                "descreption":"Choice of one side: fresh fruit, steamed veggies, baked chips or organic blue corn chips with salsa. (35-250 cal)"
+            },
+            {
+                "name": "MeataBalla",
+                "ingredients":[ "Meatballs", "Italian red sauce", "provolone"],
+                "descreption":"toasted on New Orleans French bread - (1120 cal)"
+            },
+            {
+                "name": "Shelley's Deli Chick",
+                "ingredients":["lettuce","tomato","toasted croissant"],
+                "descreption":"Our famous chicken salad with almonds and pineapple, with lettuce and tomato, on a toasted croissant. (580 cal) "
+            }
+        ],
+
+        "desserts":[
+            {
+                "name": "Cookie",
+                "ingredients":["240 cal Sugar","300 cal Cranberry walnut oatmeal","270 cal Chocolate chip","330 cal White chocolate macadamia nut"],
+                "descreption":"Fresh-Baked Incredible Cookie "
+            },
+            {
+                "name": "Gluten-Free Snickerdoodle",
+                "ingredients":"210 cal",
+                "descreption":"Gluten-Free Snickerdoodle"
+            },
+            {
+                "name": "Strawberry Shortcake",
+                "ingredients":"670 cal",
+                "descreption":"Strawberry"
+            }
+        ],
+
+        "drinks":[
+            {
+                "name": "Fountain Drinks",
+                "ingredients":"24 oz",
+                "descreption":"0-440 cal"
+            },
+            {
+                "name": "Fresh-Brewed Unsweet",
+                "ingredients":"Tea",
+                "descreption":"Unsweet"
+            },
+            {
+                "name": "Fresh-Brewed Sweet Tea",
+                "ingredients":"24/32 oz",
+                "descreption":"210/280 cal"
+            }
+        ]
+    }
+}
