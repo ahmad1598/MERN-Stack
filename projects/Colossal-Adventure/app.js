@@ -15,7 +15,7 @@ let BgCyan = "\x1b[46m"
 
 player = {
     name: '',
-    health: 10,
+    health: 30,
     inventory: []
 }
 var threetab = '\t\t\t'

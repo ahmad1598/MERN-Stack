@@ -23,6 +23,6 @@ var newTodo = {
 // });
 
 axios.get('https://api.vschool.io/Ahmad/todo/').then(function(response){
-    console.log(response.data[0].title)
+    console.log(response.data)
 })
 
