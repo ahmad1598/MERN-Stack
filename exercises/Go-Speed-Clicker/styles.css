@@ -1,0 +1,32 @@
+body {
+
+    padding: 50pt;
+}
+h1,h3{
+    text-align: center;
+}
+
+#countdown {
+    font-size: 20px;
+    margin-left: 50%;
+    color: red;
+}
+button {
+    margin-top: 20pt;
+    margin-bottom: 10pt;
+    margin-left: 50%;
+    height: 30pt;
+    font-size: 20px;
+    border-radius: 10px;
+    background: antiquewhite
+
+}
+
+#count-btn{
+    width: 40px;
+}
+
+label{
+    font-size: 20px;
+    margin-left: 50%;
+}

@@ -1,28 +1,42 @@
-var count = 0;
-var label = document.getElementById('label');
 
-var btn = document.getElementById('btn').addEventListener('click', storageFunction);
+(function() {
+    var display = document.getElementById('count-display-clicks')
+    var btn = document.getElementById('count-btn')
+    var countdown = document.getElementById("countdown")
 
+    var count = localStorage.count || 0;
+    var countDownNum = 10
+    var countID;
 
-var countDownSecond =  document.getElementById('countDown');
+    if(count > 0) {
+        count = 0
+        localStorage.count = 0
+    }
+    countdown.textContent = countDownNum
 
-function countSecond(){
-    var countDown = new Date();
-    var sec = countDown.getSeconds();
-    countDownSecond.textContent = sec + ' sec';
-}
-setInterval(countSecond,1000);
+    display.textContent = count
 
+    function stopTimer() {
+        clearInterval(countID)
+    }
 
+    function countDown() {
+        countDownNum --
+        countdown.textContent = countDownNum
+    }
 
-function storageFunction(){
+    btn.addEventListener('click', increment)
 
-        if (localStorage.count) {
-            localStorage.count = Number(localStorage.count)+1;
-          } else {
-            localStorage.count = 1;
-          }     
-          label.innerHTML = "You have clicked the button " + localStorage.count + " time(s).";
-}
-    
-label.innerHTML = "You have clicked the button " + localStorage.count + " time(s).";
+    function increment() {
+         if(!countID) {
+            countID = setInterval(countDown, 1000)
+            setTimeout(stopTimer, 10999)
+        }
+        if(countDownNum > 0) {
+            count++
+            localStorage.count = count 
+            display.textContent = count
+        }
+    }
+
+})()

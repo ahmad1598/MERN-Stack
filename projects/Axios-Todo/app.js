@@ -3,6 +3,7 @@ const taskList = document.querySelector('.collection');
 // taskList.addEventListener('click',removeTask);
 
 var ul = document.getElementById('getResult');
+ul.className = 'list-group';
 // GET
 function performGetRequest1() {
     
@@ -15,30 +16,67 @@ function performGetRequest1() {
 })
 }
 
-// deleteRequest(${response.data[i].id})
 function getOutput(response){
     let result = "";
     // deleteRequest(response.data[1]._id)
     for(let i = 0; i < response.data.length; i++){
         const li = document.createElement('li');
+        li.className="list-group-item"
         li.appendChild(document.createTextNode(response.data[i].title));
 
         const deleteButton = document.createElement('button');
         const editButton = document.createElement('button');
 
+        //link
+        const link = document.createElement('a');
+        link.textContent = 'View Details';
+        link.className = "badge badge-secondary link";
+        // link.href = alert('hi');
+        
+        var box = document.getElementById('myModal');
+        //FIXME
+        link.addEventListener('click',function(){
+            // imageBox(response.data[i].imgUrl);
+
+        })
+        li.appendChild(link);
+
         deleteButton.textContent = 'X'; //remove button 
+        deleteButton.className = 'btn btn-danger delete';
+
         editButton.textContent = 'Edit'; //edit button
+        editButton.className = 'btn btn-info edit';
+        
+
+        var checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+        checkbox.id = response.data[i]._id;
+        checkbox.style.cssFloat = 'left';
+        checkbox.style.margin = '5px 10px 0px 5px';
+       
+        
+
+        li.appendChild(checkbox);
 
         deleteButton.addEventListener('click',function(){
             deleteRequest(response.data[i]._id)
         })
+
         editButton.addEventListener('click',function(){
-            console.log('whaa')
             editRequest(response.data[i] , editButton , li)
         })
+
         li.appendChild(deleteButton);
         li.appendChild(editButton);
         ul.appendChild(li);
+
+    
+    checkbox.addEventListener('change', function(ev) {
+        ev.target.parentElement.classList.toggle("checked");
+        
+    })
+    
+
         
 }
 }
@@ -58,10 +96,12 @@ document.getElementById('todoInputForm').addEventListener('submit', function(e){
         description: `${description.value}`,
         imgUrl:`${imgUrl.value}` 
     };
-    axios.post('https://api.vschool.io/Ahmad/todo',newTodo);
+    axios.post('https://api.vschool.io/Ahmad/todo',newTodo).then(function(response){
+        window.location.reload();
+    });
+    
 
     document.getElementById('postResult').innerHTML = `<pre>Your new todo with title of: ${newTodo.title} saved successfully</pre>`;
-    // window.location.reload();
     
 });
 
@@ -74,10 +114,12 @@ function editRequest(responseData , editButton , li){
     description.value = responseData.description;
     imgUrl.value = responseData.imgUrl;
     editButton.style.display = "none";
-    // document.getElementById('sendButton').style.display = none;
     var saveButton = document.createElement('button');
     saveButton.textContent = 'SAVE';
-    li.appendChild(saveButton );
+    saveButton.style.margin = '-20px 0px 2px 220px'
+    saveButton.style.display = 'grid'
+    saveButton.className = 'btn btn-info';
+    li.appendChild(saveButton);
 
     saveButton.addEventListener('click', function(){
         console.log('heoy')
@@ -87,21 +129,55 @@ function editRequest(responseData , editButton , li){
             description: `${description.value}`,
             imgUrl:`${imgUrl.value}` 
         }).then(function(response){
-            console.log('your todo successfully updated')
+            alert('your todo successfully updated');
+            window.location.reload();
+
+        }).catch(function(response){
+            console.log("Something went wrong, your todo didn't updated")
         })
+        saveButton.style.display = "none";
+        editButton.style.display = "block";
     })
+
+    
+    
 }
 
 
 
 // Delete
-
 function deleteRequest(id){
-    axios.delete(`https://api.vschool.io/Ahmad/todo/${id}`)
+    axios.delete(`https://api.vschool.io/Ahmad/todo/${id}`).then(function(response){
+        window.location.reload();
+    })
     alert('Your todo was successfully deleted!');
-    
-    // console.log(document.getElementsByClassName('btn-danger').parentElement)
-    // console.log(id + 'hi')
 
+}
+
+
+
+
+function imageBox(img){
+// Get the modal
+var modal = document.getElementById('myModal');
+modal.style.display = "block";
+var span = document.getElementsByClassName("close")[0];
+
+var todoImg = document.getElementsByTagName('img');
+todoImg.src = img;
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    
 }
 

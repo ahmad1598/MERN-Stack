@@ -218,3 +218,15 @@ function deleteRequest(){
         
 // }
 // }
+
+
+
+//  // var complete = response.data[i].completed;
+//  checkbox.addEventListener('change', function(ev) {
+//     ev.target.parentElement.classList.toggle("checked");
+// //         if(checkbox.checked){
+// //             axios.put(`https://api.vschool.io/Ahmad/todo/${checkbox.id}`,{complete:true}).then(function(response){
+// //                 window.location.reload();
+// //             }) 
+// // }
+// })
