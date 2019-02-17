@@ -5,7 +5,7 @@
 
  let cointResult = document.createElement('h1');
 
-document.addEventListener('submit', function(e){
+document.addEventListener('submit', (e) => {
     e.preventDefault();
     let resultCal = goombaInput.value * 5 + bobOmbsInput.value * 7 + cheepCheepsInput.value * 11;
     goombaInput.value = '';
