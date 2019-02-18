@@ -77,7 +77,6 @@ header{
 }
 .headerLine{
     width: 100%;
-    /* padding-top: 10px; */
     border-top: 8px solid rgba(19, 67, 71, 0.9);
 }
 
@@ -307,12 +306,16 @@ span{
     background-color: #edf4f0;
     line-height: .9;
     color: #607476;
+    
+}
+.line{
+    border-bottom: 1px solid #d9e3dc;
 }
 
 .footerNamesUL div:nth-of-type(odd){
     grid-column: 1;
     margin-left: 10%;
-    margin-bottom: -12px;
+    /* margin-bottom: -12px; */
     /* border-bottom: 1px solid #d9e3dc; */
 }
 .footerNamesUL div:nth-of-type(even){
@@ -343,11 +346,14 @@ span{
 .faq{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    position: relative;
     width: 100%;
-    margin-top: -10px;
     height: 120px; 
     background-color: rgba(138,188,159,0.5);
     background-image: url(http://www.csszengarden.com/214/bamboo.png);
+}
+.faq div{
+    border-bottom: 1px solid #a0b9ad;;
 }
 
 .faq div:nth-of-type(odd){
@@ -372,29 +378,259 @@ span{
 
 
 
+/* -------- Media query ---------- */
+
+@media screen and (min-width:401px){
 
 
+.footerNamesUL{
+    line-height: 1.7;
+}
+    
+.faq{
+    line-height: 1.7;
+    height: 170px;
+}
+}
 
 
-
-/* Media query */
-
-@media screen and (min-width:481px){
+/* -  width on 401 to 480 -  */
+@media (min-width:401px) and (max-width:480px){
     #topContent{
         height: 185px;
     }
-
+    
     #topContent h1{
         margin: 45px -30px 0px 0px;
-        font-size: 30px;
+        font-size: 22px;
     }
 
     .enso{
         position: absolute;
-        width: 65px;
-        opacity: .5;
-        margin-top: 20px;
-        margin-left: -200px;
+        width: 40px;
+        margin-left: -140px;
+        margin-top: 40px;
+    }
+}
+
+
+@media screen and (min-width:481px){
+#topContent{
+    height: 185px;
+}
+
+#topContent h1{
+    margin: 45px -30px 0px 0px;
+    font-size: 30px;
+}
+
+.enso{
+    position: absolute;
+    width: 65px;
+    margin-left: -200px;
+    }
+.downloadPart{
+    display: block;
+    grid-column: 2;
+    font-size: 11px;
+    margin-top: -9px;
+    color: #325050;
+    
+}
+.downloadPart p{
+    display: inline-block;
+
+}
+.htmlFile , .cssFile{
+    display: inline-block;
+    padding: 3px;
+    
+    
+}
+.htmlFile a, .cssFile a{
+    text-decoration: none;
+    color: #a9b995;
+    font-family: Julius Sans One;
+    font-size: 11px;
+}
+.htmlFile span, .cssFile span{
+    font-family: verdeModerna;
+    background-color: #d9e1cd;
+    color: #a9b995;
+    font-size: 15px;
+    border-radius: 1px;
+    text-decoration-line: none;  
+}
+
+.footerIcons a{
+    width: 100%;
+    
+}
+    
+}
+
+
+@media screen and (min-width:1132px){
+    
+    .width1132{
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    header{
+        height: 300px;
+    }
+    
+    #topContent{
+        height: 300px;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        
+       
+    }
+
+    #topContent h1{
+        grid-column: 1;
+        font-size: 55px;
+        margin: 19px 0px 0px 130px;
+        
+    }
+    #topContent h5{
+        grid-column: 1;
+        margin: -65px 0px 0px -40px;
+        font-size: 25px;
+    }
+
+    .enso{
+        grid-column: 1;
+        width: 125px;
+        opacity: 1;
+        margin-left: -27%;
+    }
+
+    .headerLine{
+        grid-column: 1/-1;
+        border-top: 12px solid rgba(19, 67, 71, 0.9); 
+        border-top-right-radius: 2px;   
+    }
+
+    #viewAllDesign{
+        grid-column: 2;
+        grid-row: 3/3;
+        width: 350px;
+        /* height: 110px; */
+        align-items: center;
+        transform: translateX(5%);
+        background: rgba(255,255,255,0.1);
+        
+    }
+    #viewAllDesign span {
+        color: rgb(236, 236, 236,0.7);
+        font-size: 16px;
+        line-height: 2;
+        font-family: 'Julius Sans One', sans-serif;
+        text-decoration-line: none;
+    }
+
+    #mainContent1{
+        grid-column: 1;
+    }
+    #greenBG{
+        grid-column: 1;
+        margin-top: 0px;
+    }
+
+    #mainContent3{
+        grid-column: 1;
+    }
+
+    .bottomContent{
+        grid-column: 1/-1;
+    }
+
+    .footerText{
+        height: 340px;
+    }
+    .footerText p {
+        width: 1000px;
+        font-size: 25px;
+        padding: 70px;
+        margin-left: 130px;
+    }
+    .footerText p a{
+        font-size: 30px;
+    }
+
+    .footerIcons{
+        grid-column: 1/-1;
+        height: 150px;
+        justify-content: center;
+        
+    }
+    .footerIcons a{
+        align-items: center;
+        font-size: 60px;
+        margin: 40px;
+       
+    }
+
+    .footerNamesUL{
+        grid-column: 2;
+        grid-row: 1;
+        display: block;
+        line-height: 2;
+        
+    }
+    .footerNamesUL div{
+        border-top: 1px solid #d9e3dc;
+    }
+    .footerNamesUL h1{
+        font-size: 16px;
+        margin-left: 20px;
+    }
+    .line{
+        border-bottom: 0;
+    }
+    .footerNamesUL h3{
+        font-size: 12px;
+        margin-top: -10px;
+        margin-left: 20px;
+    }
+    .faq{
+        display: block;
+        grid-column: 2;
+        grid-row: 2;
+        height: 100%;
+        background-color: rgba(103, 160, 127, 0.50);
+  
+    }
+    .faq div{
+        align-items: center;
+        margin-top: 25px;   
+        margin-bottom: 25px;   
+    }
+    .faq div p{
+        font-size: 15px;
+    }
+    #firstName{
+        margin-top: 40px;
+    }
+    #firstFaq{
+        margin-top: 100px;
+    }
+    #mainContent1 p, #greenBG p, #mainContent3 p {
+        font-size: 13px;
+        line-height: 2;
+        
+    }
+    #mainContent1 h1, #greenBG h1, #mainContent3 h1 {
+        font-size: 23px;
+        
+    }
+    .part3{
+        margin-bottom: 40px;
+    }
+    .part1{
+        margin-top: 40px;
     }
     
 }

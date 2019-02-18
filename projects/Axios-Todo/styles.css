@@ -15,8 +15,8 @@
 
 .checked {
     text-decoration: line-through;
-    text-decoration-color: red;
-    text-decoration-style: wavy;
+    text-decoration-color: blue;
+    text-decoration-style: solid;
     /* transform: rotate(180deg); */
   }
   

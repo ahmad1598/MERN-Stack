@@ -8,17 +8,13 @@ ul.className = 'list-group';
 function performGetRequest1() {
     
     axios.get('https://api.vschool.io/Ahmad/todo').then(function(response){
-    // output.innerHTML = getOutput(response);  
     getOutput(response);
-    
-    // putResult(response);
     
 })
 }
 
 function getOutput(response){
     let result = "";
-    // deleteRequest(response.data[1]._id)
     for(let i = 0; i < response.data.length; i++){
         const li = document.createElement('li');
         li.className="list-group-item"
@@ -31,9 +27,9 @@ function getOutput(response){
         const link = document.createElement('a');
         link.textContent = 'View Details';
         link.className = "badge badge-secondary link";
-        // link.href = alert('hi');
         
-        var box = document.getElementById('myModal');
+        // var box = document.getElementById('myModal');
+
         //FIXME
         link.addEventListener('click',function(){
             // imageBox(response.data[i].imgUrl);
@@ -41,22 +37,26 @@ function getOutput(response){
         })
         li.appendChild(link);
 
-        deleteButton.textContent = 'X'; //remove button 
+        deleteButton.textContent = 'X'; //remove button     
         deleteButton.className = 'btn btn-danger delete';
 
         editButton.textContent = 'Edit'; //edit button
         editButton.className = 'btn btn-info edit';
         
-
+        //Creating Checkbox
         var checkbox = document.createElement('input');
         checkbox.type = "checkbox";
         checkbox.id = response.data[i]._id;
         checkbox.style.cssFloat = 'left';
         checkbox.style.margin = '5px 10px 0px 5px';
-       
-        
-
         li.appendChild(checkbox);
+
+        //checking if todo is completed or not
+        if(response.data[i].completed === true){
+            li.classList.add("checked");
+            checkbox.checked = true;
+            // editButton.style.display
+        }
 
         deleteButton.addEventListener('click',function(){
             deleteRequest(response.data[i]._id)
@@ -70,14 +70,16 @@ function getOutput(response){
         li.appendChild(editButton);
         ul.appendChild(li);
 
-    
-    checkbox.addEventListener('change', function(ev) {
-        ev.target.parentElement.classList.toggle("checked");
-        
-    })
-    
-
-        
+        //checkbox
+        checkbox.addEventListener('change',function(e){
+            e.preventDefault();
+            let completeObj = {}
+            completeObj.completed = this.checked
+            axios.put(`https://api.vschool.io/Ahmad/todo/${response.data[i]._id}`, completeObj).then(function(response){
+                e.target.parentElement.classList.toggle("checked");
+            })
+           
+        })        
 }
 }
 
@@ -113,7 +115,9 @@ function editRequest(responseData , editButton , li){
     price.value = responseData.price;
     description.value = responseData.description;
     imgUrl.value = responseData.imgUrl;
+
     editButton.style.display = "none";
+    
     var saveButton = document.createElement('button');
     saveButton.textContent = 'SAVE';
     saveButton.style.margin = '-20px 0px 2px 220px'
@@ -157,27 +161,27 @@ function deleteRequest(id){
 
 
 
-function imageBox(img){
-// Get the modal
-var modal = document.getElementById('myModal');
-modal.style.display = "block";
-var span = document.getElementsByClassName("close")[0];
+// function imageBox(img){
+// // Get the modal
+// var modal = document.getElementById('myModal');
+// modal.style.display = "block";
+// var span = document.getElementsByClassName("close")[0];
 
-var todoImg = document.getElementsByTagName('img');
-todoImg.src = img;
+// var todoImg = document.getElementsByTagName('img');
+// todoImg.src = img;
 
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
     
-}
+// }
 
