@@ -1,21 +1,22 @@
 const taskList = document.querySelector('.collection');
-//Remove Task Event
-// taskList.addEventListener('click',removeTask);
+const sendBtn = document.getElementById('sendButton');
 
-var ul = document.getElementById('getResult');
+let ul = document.getElementById('getResult');
 ul.className = 'list-group';
+
 // GET
-function performGetRequest1() {
+const performGetRequest1 = () => {
     
-    axios.get('https://api.vschool.io/Ahmad/todo').then(function(response){
+    axios.get('https://api.vschool.io/Ahmad/todo').then( response => {
     getOutput(response);
     
 })
 }
 
-function getOutput(response){
-    let result = "";
+const getOutput = response => {
+
     for(let i = 0; i < response.data.length; i++){
+
         const li = document.createElement('li');
         li.className="list-group-item"
         li.appendChild(document.createTextNode(response.data[i].title));
@@ -25,16 +26,29 @@ function getOutput(response){
 
         //link
         const link = document.createElement('a');
-        link.textContent = 'View Details';
+        link.textContent = 'View Image';
         link.className = "badge badge-secondary link";
-        
-        // var box = document.getElementById('myModal');
 
-        //FIXME
-        link.addEventListener('click',function(){
-            // imageBox(response.data[i].imgUrl);
+        //images
+        const img = document.createElement('img');
+        img.textContent = response.data[i].imgUrl;
 
+
+        //link & image
+        let modal = document.getElementById('myModal');
+        let modalImg = document.getElementById('img01');
+        let closeImg = document.getElementById('close');
+       
+        link.addEventListener('click',() => {
+            modal.style.display = 'block';
+            modalImg.src = response.data[i].imgUrl;
+            
+            closeImg.addEventListener('click',() => {
+                modal.style.display = "none";
+            })
         })
+        
+
         li.appendChild(link);
 
         deleteButton.textContent = 'X'; //remove button     
@@ -43,8 +57,8 @@ function getOutput(response){
         editButton.textContent = 'Edit'; //edit button
         editButton.className = 'btn btn-info edit';
         
-        //Creating Checkbox
-        var checkbox = document.createElement('input');
+        // Checkbox
+        let checkbox = document.createElement('input');
         checkbox.type = "checkbox";
         checkbox.id = response.data[i]._id;
         checkbox.style.cssFloat = 'left';
@@ -55,14 +69,14 @@ function getOutput(response){
         if(response.data[i].completed === true){
             li.classList.add("checked");
             checkbox.checked = true;
-            // editButton.style.display
+            editButton.classList.add('disabled');
         }
 
-        deleteButton.addEventListener('click',function(){
+        deleteButton.addEventListener('click',() => {
             deleteRequest(response.data[i]._id)
         })
 
-        editButton.addEventListener('click',function(){
+        editButton.addEventListener('click',() => {
             editRequest(response.data[i] , editButton , li)
         })
 
@@ -71,12 +85,14 @@ function getOutput(response){
         ul.appendChild(li);
 
         //checkbox
-        checkbox.addEventListener('change',function(e){
+        checkbox.addEventListener('change',(e) => {
             e.preventDefault();
             let completeObj = {}
-            completeObj.completed = this.checked
-            axios.put(`https://api.vschool.io/Ahmad/todo/${response.data[i]._id}`, completeObj).then(function(response){
+            completeObj.completed = checkbox.checked
+            axios.put(`https://api.vschool.io/Ahmad/todo/${response.data[i]._id}`, completeObj).then(response => {
                 e.target.parentElement.classList.toggle("checked");
+                editButton.classList.toggle('disabled');
+                
             })
            
         })        
@@ -84,13 +100,13 @@ function getOutput(response){
 }
 
 // POST
-var newTodoTitle = document.getElementById('todoTitle');
-var price = document.getElementById('todoPrice');
-var description = document.getElementById('todoDescription');
-var imgUrl = document.getElementById('todoImg');
-var newTodo;
+let newTodoTitle = document.getElementById('todoTitle');
+let price = document.getElementById('todoPrice');
+let description = document.getElementById('todoDescription');
+let imgUrl = document.getElementById('todoImg');
+let newTodo;
 
-document.getElementById('todoInputForm').addEventListener('submit', function(e){
+document.getElementById('todoInputForm').addEventListener('submit', (e) => {
     e.preventDefault();
     newTodo = {
         title: `${newTodoTitle.value}`,
@@ -98,90 +114,55 @@ document.getElementById('todoInputForm').addEventListener('submit', function(e){
         description: `${description.value}`,
         imgUrl:`${imgUrl.value}` 
     };
-    axios.post('https://api.vschool.io/Ahmad/todo',newTodo).then(function(response){
+    axios.post('https://api.vschool.io/Ahmad/todo',newTodo).then(response => {
         window.location.reload();
     });
     
-
     document.getElementById('postResult').innerHTML = `<pre>Your new todo with title of: ${newTodo.title} saved successfully</pre>`;
     
 });
 
-
-
 //PUT
-function editRequest(responseData , editButton , li){
+const editRequest = (responseData , editButton , li) => {
     newTodoTitle.value = responseData.title;
     price.value = responseData.price;
     description.value = responseData.description;
     imgUrl.value = responseData.imgUrl;
-
     editButton.style.display = "none";
-    
-    var saveButton = document.createElement('button');
+    let saveButton = document.createElement('button');
     saveButton.textContent = 'SAVE';
     saveButton.style.margin = '-20px 0px 2px 220px'
     saveButton.style.display = 'grid'
-    saveButton.className = 'btn btn-info';
+    saveButton.className = 'btn btn-success';
     li.appendChild(saveButton);
-
-    saveButton.addEventListener('click', function(){
+    sendBtn.classList.add('disabled');
+    saveButton.addEventListener('click', () => {
         console.log('heoy')
         axios.put(`https://api.vschool.io/Ahmad/todo/${responseData._id}`,{
             title: `${newTodoTitle.value}`,
             price: `${price.value}`,
             description: `${description.value}`,
             imgUrl:`${imgUrl.value}` 
-        }).then(function(response){
+        }).then(response => {
             alert('your todo successfully updated');
             window.location.reload();
 
-        }).catch(function(response){
+        }).catch(response => {
             console.log("Something went wrong, your todo didn't updated")
         })
         saveButton.style.display = "none";
         editButton.style.display = "block";
     })
 
-    
-    
 }
 
-
-
 // Delete
-function deleteRequest(id){
-    axios.delete(`https://api.vschool.io/Ahmad/todo/${id}`).then(function(response){
+const deleteRequest = id => {
+    axios.delete(`https://api.vschool.io/Ahmad/todo/${id}`).then(response => {
         window.location.reload();
+    }).catch(response => {
+        console.log("Something went wrong, your todo didn't deleted")
     })
     alert('Your todo was successfully deleted!');
 
 }
-
-
-
-
-// function imageBox(img){
-// // Get the modal
-// var modal = document.getElementById('myModal');
-// modal.style.display = "block";
-// var span = document.getElementsByClassName("close")[0];
-
-// var todoImg = document.getElementsByTagName('img');
-// todoImg.src = img;
-
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-    
-// }
-
