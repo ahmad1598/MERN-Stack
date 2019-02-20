@@ -10,6 +10,10 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 
+  html{
+    scroll-behavior: smooth;
+  }
+
 #root{
     display: grid;
     grid-template-columns: 1fr;
@@ -75,17 +79,18 @@
     height: 800px;
     grid-gap: 3px ;
     background: rgba(0, 11, 109, 0.493);
-    background-image: url("https://images.unsplash.com/photo-1536815949980-5575fdcd2279?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+    background-image: url("https://images.unsplash.com/photo-1509785307050-d4066910ec1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2965&q=80");
     background-blend-mode: lighten;
     background-size: cover;
     font-family: Julius Sans One;
     background-attachment: fixed;
-    /* box-shadow: 0px 0px 20px rgba(150, 149, 149, 0.541); */
+    border-bottom: 2px solid;
+    border-top: 2px solid;
 }
 .products div:nth-child(1){
     grid-column: 1;
     margin-top: 300px;
-    margin-left: 350px;
+    margin-left: 50px;
     line-height: 50px;
     color: rgb(0, 0, 0);
     font-size: 20px;
@@ -93,7 +98,7 @@
     padding: 15px;
     box-shadow: 0px 0px 20px rgba(250, 193, 4, 0.822);
     width: 200px;
-    height: 400px;
+    height: 350px;
     -webkit-text-stroke: 1px rgb(255, 255, 255);
     
 }
@@ -102,11 +107,12 @@
     color: rgb(0, 0, 0);
     margin-top: 300px;
     line-height: 50px;
+    margin-left: -550px;
     font-size: 20px;
     list-style: none;
     padding: 15px;
     width: 260px;
-    height: 400px;
+    height: 350px;
     box-shadow: 0px 0px 20px rgba(250, 193, 4, 0.822);
     -webkit-text-stroke: 1px rgb(255, 255, 255);
     /* border-radius: 5%; */
