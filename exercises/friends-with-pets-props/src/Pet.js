@@ -4,7 +4,8 @@ import React from 'react'
 const Pet = (props) => {
     return(
         <li>
-            {props.name}
+            Name: {props.name}
+            Breed: {props.breed}
         </li>
     )
 }

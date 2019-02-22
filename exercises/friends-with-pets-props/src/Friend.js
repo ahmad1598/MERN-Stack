@@ -1,7 +1,7 @@
 import React from 'react'
 import Pet from './Pet.js'
 
-const Friend = (props)=>{
+const Friend = (props) => {
     const friendsPet = props.pets.map((pet, i) => <Pet name = {pet.name} breed = {pet.breed} key = {i} />)
     return(
         <div className="friend">
