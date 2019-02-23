@@ -1,0 +1,109 @@
+{
+    "superHeroes": [
+        {
+            "name": "Batman",
+            "imgUrl": "https://purepng.com/public/uploads/large/purepng.com-batman-arkham-knightbatmansuperherocomicdc-comicsbob-kanebat-manbruce-wayne-1701528525412byuut.png",
+            "Catchphrase":"I am the vengeance, I am the night, I am BATMAN!"
+        },
+        {
+            "name": "Robin",
+            "imgUrl": "https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fit,w_680/wjzkilyuniv7zcazfuns",
+            "Catchphrase":"Holy ____ Batman!"
+        },
+        {
+            "name": "Hulk",
+            "imgUrl": "https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fit,w_768/hs1s0a9rz9kxe5o4h5yx",
+            "Catchphrase":"HULK SMASH!"
+        },
+        {
+            "name": "The Thing",
+            "imgUrl": "https://cdnb.artstation.com/p/assets/images/images/000/221/921/medium/lionel-cornelius-jr-thing-final-2.jpg?1411741243",
+            "Catchphrase":"It's clobberin' time!"
+        },
+        {
+            "name": "The Human Torch",
+            "imgUrl": "https://vignette.wikia.nocookie.net/superheroes/images/e/e8/HumanTorch.jpg/revision/latest?cb=20140317203329",
+            "Catchphrase":"Flame on!"
+        },
+        {
+            "name": "Spiderman",
+            "imgUrl": "https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fit,w_768/b60dlfmpvd7bxyqvieat",
+            "Catchphrase":"My spidey senses are tingling."
+        },
+        {
+            "name": "Thor",
+            "imgUrl": "https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fit,w_768/xs3xjxyhfvey7brarc0n",
+            "Catchphrase":"Odin’s beard!"
+        },
+        {
+            "name": "Doctor Strange",
+            "imgUrl": "https://vignette.wikia.nocookie.net/marvel-cinematic-universe/images/f/f7/Dr._Strange_Movie_Profile_Pic.jpg/revision/latest?cb=20170512222336",
+            "Catchphrase":"By the hoary hosts of Hoggoth!"
+        },
+        {
+            "name": "He-Man",
+            "imgUrl": "https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fit,w_768/sx7yvbvnhy9xlxby7vjc",
+            "Catchphrase":"I have the power!"
+        },
+        {
+            "name": "Green Lantern",
+            "imgUrl": "https://res.cloudinary.com/jerrick/image/upload/f_auto,fl_progressive,q_auto,c_fit,w_768/hcan4azsnvcfqirdjbox",
+            "Catchphrase":"In brightest day, in blackest night, no evil shall escape my sight. Let those who worship evil’s might, beware my power, GREEN LANTERN’S LIGHT!"
+        },
+        {
+            "name": "Wonder Woman",
+            "imgUrl": "https://d1h8hghznt9fbz.cloudfront.net/wp-content/uploads/2018/03/15122315/Gal-Gadot-Wonder.jpg",
+            "Catchphrase":"Suffering Sappho/ Great Hera"
+        },
+        {
+            "name": "Billy Batson",
+            "imgUrl": "https://vignette.wikia.nocookie.net/earth279527/images/8/89/Captain_Marvel_%28Enahnced%29.jpg/revision/latest?cb=20180111195146",
+            "Catchphrase":"SHAZAM!"
+        },
+        {
+            "name": "Wolverine",
+            "imgUrl": "https://upload.wikimedia.org/wikipedia/en/c/c8/Marvelwolverine.jpg",
+            "Catchphrase":"I'm the best there is at what I do but what I do best isn't very nice/ Bub"
+        },
+        {
+            "name": "Captain America",
+            "imgUrl": "https://i.pinimg.com/originals/ec/b8/67/ecb867283a30f334f40d11de551f5f36.jpg",
+            "Catchphrase":"Avengers Assemble!"
+        },
+        {
+            "name": "Beast",
+            "imgUrl": "https://static.comicvine.com/uploads/original/11113/111130081/3443097-2460294671-beast.jpg",
+            "Catchphrase":"Oh my stars and garters"
+        },
+        {
+            "name": "Colossus",
+            "imgUrl": "https://i.pinimg.com/originals/fe/42/b9/fe42b9772411c52519cecde6dfc084e9.png",
+            "Catchphrase":"Lenin's ghost!/ By the White Wolf!"
+        },
+        {
+            "name": "Superman",
+            "imgUrl": "https://www.sideshow.com/storage/product-images/903305/super-powers-superman_dc-comics_gallery_5c4d07bcf32e0.jpg",
+            "Catchphrase":"Up up and away/ This looks like a job for Superman"
+        },
+        {
+            "name": "Daredevil",
+            "imgUrl": "https://www.writeups.org/wp-content/uploads/Daredevil-Marvel-Comics-h155.jpg",
+            "Catchphrase":"The Man Without Fear"
+        },
+        {
+            "name": "Silver Surfer",
+            "imgUrl": "https://cdnb.artstation.com/p/assets/images/images/000/500/665/large/max-moda-art-silver-surfer-colorato.jpg?1424859189",
+            "Catchphrase":"To me, my Board"
+        },
+        {
+            "name": "Cyclops",
+            "imgUrl": "https://uncannyxmen.net/sites/default/files/images/characters/cyclops/cyclops-bigcostume2.jpg",
+            "Catchphrase":"Emit powerful optic blasts"
+        },
+        {
+            "name": "Super Girl",
+            "imgUrl": "https://www.longislandpress.com/wp-content/uploads/2015/10/supergirl1.jpg",
+            "Catchphrase":"With an S on my chest"
+        }
+    ]
+}
