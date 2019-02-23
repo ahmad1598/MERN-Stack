@@ -1,5 +1,9 @@
 import React from 'react'
+import Box from './Box.js'
 import './style.css'
+import Buttons from './Buttons.js';
+import BtnSounds from './BtnSounds.js'
+
 class App extends React.Component{
     constructor(){
         super()
@@ -8,21 +12,27 @@ class App extends React.Component{
             color2:'blue',
             color3:'green',
             color4:'purple',
-            color5: 'black'
-
+            color5: 'gray',
+            color6: 'Pink',
+            borderRadius:5
         }
     }
 
-    handleChangeBtn1 = () => {
+  
+       
+   
+
+    
+
+    handleChangeTopLeftCorner = () => {
         let R = Math.floor(Math.random() * 256)
         let G = Math.floor(Math.random() * 256)
         let B = Math.floor(Math.random() * 256)
-        
         this.setState({
             color1: `rgb(${R}, ${G}, ${B})`
         })
     }
-    handleChangeBtn2 = () => {
+    handleChangeTopMiddle = () => {
         let R = Math.floor(Math.random() * 256)
         let G = Math.floor(Math.random() * 256)
         let B = Math.floor(Math.random() * 256)
@@ -31,7 +41,7 @@ class App extends React.Component{
             color2: `rgb(${R}, ${G}, ${B})`
         })
     }
-    handleChangeBtn3 = () => {
+    handleChangeTopRightCorner = () => {
         let R = Math.floor(Math.random() * 256)
         let G = Math.floor(Math.random() * 256)
         let B = Math.floor(Math.random() * 256)
@@ -39,16 +49,18 @@ class App extends React.Component{
             color3: `rgb(${R}, ${G}, ${B})`
         })
     }
-    handleChangeBtn4 = () => {
+    handleChangeBottomHalf = () => {
         let R = Math.floor(Math.random() * 256)
         let G = Math.floor(Math.random() * 256)
         let B = Math.floor(Math.random() * 256)
         this.setState({
-            color4: `rgb(${R}, ${G}, ${B})`
+            color4: `rgb(${R}, ${G}, ${B})`,
+            color5: `rgb(${R}, ${G}, ${B})`,
+            color6: `rgb(${R}, ${G}, ${B})`
         })
     }
 
-    handleChangeAll = () => {
+    handleChangeBlackWhite = () => {
         const colorArr = ['white','black'];
         let colorRandom = colorArr[Math.floor(Math.random() * colorArr.length)]
         this.setState({
@@ -56,119 +68,47 @@ class App extends React.Component{
             color2: colorRandom,
             color3: colorRandom,
             color4: colorRandom,
-            color5: colorRandom
+            color5: colorRandom,
+            color6: colorRandom
         })
     }
 
-    handleChangeBtn6 = () => {
-        
+    handleBorderRadius = () => {
+        this.setState(prevState => {
+            return {
+                borderRadius: prevState.borderRadius === 5 ? 100 : 5
+            }
+        })
+    }
+
+    handleChangeAll = () => {
+        let R = Math.floor(Math.random() * 256)
+        let G = Math.floor(Math.random() * 256)
+        let B = Math.floor(Math.random() * 256)
+        this.setState({
+            color1: `rgb(${R}, ${G}, ${B})`,
+            color2: `rgb(${R}, ${G}, ${B})`,
+            color3: `rgb(${R}, ${G}, ${B})`,
+            color4: `rgb(${R}, ${G}, ${B})`,
+            color5: `rgb(${R}, ${G}, ${B})`,
+            color6: `rgb(${R}, ${G}, ${B})`
+        })
     }
 
 
     
     render(){
-        const boxStyle1 = {
-            gridColumn:1,
-            width: 200,
-            height: 200,
-            border: '1px solid black',
-            display: 'flex',
-            backgroundColor: this.state.color1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom:'10px',
-            justifySelf: 'center',
-            
-        }
-        const boxStyle2 = {
-            gridColumn:2,
-            width: 200,
-            height: 200,
-            border: '1px solid black',
-            display: 'flex',
-            backgroundColor: this.state.color2,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom:'10px',
-            justifySelf: 'center',
-            
-        }
-        const boxStyle3 = {
-            gridColumn:3,
-            width: 200,
-            height: 200,
-            border: '1px solid black',
-            display: 'flex',
-            backgroundColor: this.state.color3,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom:'10px',
-            justifySelf: 'center',
-            
-        }
-        const boxStyle4 = {
-            gridColumn:1,
-            width: 200,
-            height: 200,
-            border: '1px solid black',
-            display: 'flex',
-            backgroundColor: this.state.color4,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom:'10px',
-            justifySelf: 'center',
-            
-        }
-        const boxStyle5 = {
-            gridColumn:2,
-            gridRow: 2,
-            width: 200,
-            height: 200,
-            border: '1px solid black',
-            display: 'flex',
-            backgroundColor: this.state.color4,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom:'10px',
-            justifySelf: 'center',
-            
-        }
-        const boxStyle6 = {
-            gridColumn:3,
-            gridRow: 2,
-            width: 200,
-            height: 200,
-            border: '1px solid black',
-            display: 'flex',
-            backgroundColor: this.state.color4,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom:'10px',
-            justifySelf: 'center',
-            
-        }
-        
-        
-
         return(
             <div>
-                <div className = "grid">
-                    <div style ={boxStyle1}></div>
-                    <div style ={boxStyle2}></div>
-                    <div style ={boxStyle3}></div>
-                    <div style ={boxStyle4}></div>
-                    <div style ={boxStyle5}></div>
-                    <div style ={boxStyle6}></div>
-                </div>
-                <div className = "btnStyle">
-                    <button onClick = {this.handleChangeBtn1} className = "buttonStyle">SQUARE - 1 </button>
-                    <button onClick = {this.handleChangeBtn2} className = "buttonStyle">SQUARE - 2</button>
-                    <button onClick = {this.handleChangeBtn3} className = "buttonStyle">SQUARE - 3</button>
-                    <button onClick = {this.handleChangeBtn4} className = "buttonStyle">SQUARE - 4</button>
-                    <button onClick = {this.handleChangeAll} className = "buttonStyle">CHANGE ALL</button>
-                    <button onClick = {this.handleChangeBtn6} className = "buttonStyle">SQUARE - 4</button>
-                    
-                </div>
+                <Box state = {this.state} />
+                    <Buttons topLeftCorner = {this.handleChangeTopLeftCorner} 
+                            topMiddle = {this.handleChangeTopMiddle} 
+                            topRightCorner = {this.handleChangeTopRightCorner}
+                            bottomHalf = {this.handleChangeBottomHalf} 
+                            blackWhite = {this.handleChangeBlackWhite} 
+                            borderRadius = {this.handleBorderRadius}
+                            changeAll = {this.handleChangeAll} />
+                
             </div>
         )
     }
