@@ -1,9 +1,6 @@
 import React from 'react'
 
 const SuperHero = props => {
-
-    
-
     return(
         <div onClick = {props.onClick}>
             <div className="heroTitle" >

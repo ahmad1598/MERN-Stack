@@ -3,6 +3,7 @@ import React from 'react'
 import data from './superHeroes.json'
 import SuperHero from './SuperHero.js'
 import './style.css'
+
 class App extends React.Component{
     
     constructor(){
