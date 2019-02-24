@@ -18,12 +18,6 @@ class App extends React.Component{
         }
     }
 
-  
-       
-   
-
-    
-
     handleChangeTopLeftCorner = () => {
         let R = Math.floor(Math.random() * 256)
         let G = Math.floor(Math.random() * 256)
