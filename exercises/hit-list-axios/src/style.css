@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("http://deathtotheworld.com/wp-content/uploads/2014/09/canvas-texture-paper.jpg");
+    
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    /* width: 50%; */
+
+}
+
+.dataContainer{
+    display: grid;
+    width: 40%;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    padding: 45px;
+}
+.dataContainer div{
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 155px;
+    height: 220px;
+    margin: 10px;
+}
+h1 {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: self-end;
+    background-color: #004377;
+    opacity: .75;;
+    margin-top: 183px;
+    height: 37px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(37, 37, 37);
+    color: red;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    
+}
+.header img{
+    height: 80px;
+}
+.header h3{
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-left: 40px;
+}
