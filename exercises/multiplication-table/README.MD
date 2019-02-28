@@ -1,5 +1,5 @@
 <h1>Multiplication Table</h1><br />
-<h3>Write a function that returns a 10 X 10 multiplication table (2D array).</h3>
+<h3>A function that returns a 10 X 10 multiplication table (2D array).</h3>
 
 <h4>Output:</h4>
 
