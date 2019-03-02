@@ -3,7 +3,7 @@
 <br>
 <hr>
 <h5> Examples: </h5>
-<p>combined(["this", "is", "an", "array"]))   Output:  ["is", "an", "array"]</p>
-<p>combined(["this", "is", "an", "and" , "array"])) Output: ["an","and","array"]</p>
-<p>combined(["solving","problem","is","fun"])) Output: [ 'solving', 'problem', 'is' ]</p>
-<p>combined(["coding","is","most","awesome","thing","ever"])) Output: [ 'most', 'awesome', 'thing' ]</p>
+<p>combined(["this", "is", "an", "array"])   Output:  ["is", "an", "array"]</p>
+<p>combined(["this", "is", "an", "and" , "array"]) Output: ["an","and","array"]</p>
+<p>combined(["solving","problem","is","fun"]) Output: [ 'solving', 'problem', 'is' ]</p>
+<p>combined(["coding","is","most","awesome","thing","ever"]) Output: [ 'most', 'awesome', 'thing' ]</p>
