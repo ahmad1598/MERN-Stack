@@ -1,0 +1,47 @@
+/* .container{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+    
+
+} */
+
+.todoContainer{
+    display: grid;
+    width: 40%;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    padding: 45px;
+    grid-gap: 5px;
+    font-size: 10px;
+}
+.todoContainer div{
+    width: 200px;
+    height: 330px;
+    border: 1px solid;
+}
+.container div img{
+    width: 200px;
+    height: 200px;
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    background-color: cadetblue;
+    height: 100px;
+    align-items: center;
+}
+form input {
+    margin: 19px;
+    width: 200px;
+    height: 22px;
+}
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+button {
+    grid-column: 2;
+}
