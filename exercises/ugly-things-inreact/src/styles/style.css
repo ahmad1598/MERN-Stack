@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.todoContainer{
+    width: 60%;
+    margin: auto;
+    padding: 45px;
+    display: grid;
+    grid-gap: 20px;
+    font-size: 10px;
+    margin-top: -10px;
+    align-items: center;
+    background-size: cover;
+    justify-content: center;
+    background-repeat: no-repeat;
+    grid-template-columns: repeat(3,1fr);
+}
+.todoContainer div{
+    width: 200px;
+    height: 330px;
+    margin-left: -1px;
+    margin-bottom: 10px;
+}
+.container div img{
+    width: 200px;
+    height: 200px;
+}
+
+#firstLayer{
+    background-color: #dfdfdf;
+    border: 1px solid #b4b4b4;
+}
+.submitForm input {
+    margin: 19px;
+    width: 240px;
+    height: 28px;
+}
+.submitForm {
+    display: grid;
+    background-color: rgb(172, 172, 172);
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.submitForm button {
+    margin: auto;
+    height: 28px;
+    width: 230px;
+    grid-column:2;
+    font-size: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    font-family: sans-serif;
+    background-color: rgb(230, 230, 230);
+}
+.submitForm button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 2px;
+}
+
+button {
+    margin: 5px;
+    width: 90px;
+    height: 30px;
+    font-size: 14px;
+    margin-top:35px;
+    font-family: sans-serif;
+}
+#deleteBtn:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.705);
+}
+#editBtn:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgba(2, 201, 2, 0.726);
+}
+
+h1{
+    height: 30px;
+    font-size: 17px;
+    text-align: center;
+    font-family: sans-serif;
+    box-shadow: 0px 0px 1px;
+    color: rgb(78, 78, 78);
+}
+p{
+    margin: 5px;
+    font-size: 12px;
+    text-align: center;
+    font-family: sans-serif;
+    
+}
+
+.editForm input{
+    margin: 5px;
+    width: 185px;
+    height: 30px;
+    padding: 10px;
+    margin-left: 5px;
+}
+.editForm button{
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgba(2, 161, 74, 0.877);
+}
+#closeBtn{
+    margin-top: 0px;
+    cursor: pointer;   
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.699);
+}

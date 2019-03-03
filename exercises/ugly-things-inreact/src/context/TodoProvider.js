@@ -32,7 +32,6 @@ class TodoProvider extends Component{
     
     }
 
-
     handleDelete = (id) => {
         axios.delete(`https://api.vschool.io/Ahmad/todo/${id}`).then(response => {
             this.setState(prevState => {
@@ -42,7 +41,6 @@ class TodoProvider extends Component{
             })
         }).catch(err => console.log(err))
     }
-
 
     handleEdit = (id,update) => {    
         axios.put(`https://api.vschool.io/Ahmad/todo/${id}`, update).then(response => {
@@ -70,6 +68,7 @@ class TodoProvider extends Component{
         )
     }
 }
+
 
 export const withTodos = C => props => (
     <TodoContext.Consumer>

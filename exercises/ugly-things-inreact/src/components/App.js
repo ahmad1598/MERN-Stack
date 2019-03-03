@@ -1,8 +1,8 @@
 import React from 'react'
-import { withTodos } from './context/TodoProvider.js'
+import { withTodos } from '../context/TodoProvider.js'
 import Form from './Form.js'
 import TodoList from './TodoList.js'
-import './style.css'
+import '../styles/style.css'
 
 class App extends React.Component{
     constructor(){

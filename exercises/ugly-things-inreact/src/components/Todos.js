@@ -36,26 +36,26 @@ class Todos extends Component {
     render(){
         const { title,description,imgUrl,_id } = this.props
         return (
-            <div >
+            <div id="firstLayer">
             {
                 !this.state.isTaggled 
                 ?
-                    <div style = {{backgroundImage: `url(${imgUrl})`}}>
+                    <div>
                         <h1>{title}</h1>
                         <p>{description}</p>
-                        {/* <img src={imgUrl} alt=""/> */}
-                        <button onClick= {() => {this.props.handleDelete(_id)}}>Delete</button>
-                        <button onClick = {this.toggler}>Edit</button>
+                        <img src={imgUrl} alt=""/>
+                        <button id="deleteBtn" onClick= {() => {this.props.handleDelete(_id)}}>Delete</button>
+                        <button id="editBtn" onClick = {this.toggler}>Edit</button>
                     </div>
                 :
-                    <div>
-                        <Form 
+                    <div className="editForm">
+                        <Form
                             {...this.state}
                             btnText = "Submit Edit"
                             handleChange = {this.handleChange}
                             handleSubmit = {this.handleSubmit}
                             />
-                            <button onClick={this.toggler}>Close</button>
+                            <button id="closeBtn" onClick={this.toggler}>Close</button>
                     </div>
             }
             </div>
