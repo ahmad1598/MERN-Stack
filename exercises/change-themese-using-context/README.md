@@ -1,4 +1,4 @@
-<h1>Changing Themes using Context </h1>
+<h1>Changing Themes using React Context </h1>
 <hr>
 
 <img src="./src/img/dark.png" />
