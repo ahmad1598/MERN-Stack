@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import Form from './Form.js'
+
 class App extends Component {
     constructor(){
         super()
@@ -10,9 +11,12 @@ class App extends Component {
     }
 
     handleChange = (e) => {
-        this.setState({
-            nameInput:e.target.value
-        })
+        if(e.target.value !== ''){
+            this.setState({
+                nameInput:e.target.value
+
+            })
+        }
     }
 
     handleSubmit = (e) => {
