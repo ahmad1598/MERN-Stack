@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+}
+
+body{
+    /* background-color: #00b0ff; */
+    /* background-color: #ffffffc7 !important; */
+}
+
+
+
+.btn{
+    font-size: 13px;
+    margin: 4px;
+}
+
+.collection .collection-item{
+    border-bottom: 1px solid #000000;
+    background-color: #ff57225e;
+}
+.white-text {
+    color: #fff !important;
+}
+.card-panel.z-depth-1.blue{
+    margin: -0.7rem 0 1rem 0;
+    background-image: url("")
+}
