@@ -1,27 +1,319 @@
 *{
     margin: 0;
 }
+ 
 
-body{
-    /* background-color: #00b0ff; */
-    /* background-color: #ffffffc7 !important; */
+.search{
+    background: rgba(0, 11, 109, 0.23);
+    background-blend-mode: lighten;
+    background-image: url("https://cai.tools.sap/blog/wp-content/uploads/2016/03/Octocat-github-1.png");
+    background-size: 50%;
+    background-position-y: 60%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
 }
 
-
+h1{
+    font-size: 4.4vw;
+}
 
 .btn{
-    font-size: 13px;
     margin: 4px;
+    font-size: 12px;
 }
 
+
+
+.collection {
+    border: 1px dotted #ffffff;
+   
+}
+.latest-respos {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 12px;
+    margin-bottom: -4px;
+    background-color: #ffffff24;
+}
 .collection .collection-item{
-    border-bottom: 1px solid #000000;
-    background-color: #ff57225e;
+    background-color: #ffffff24;
+    border-bottom: 1px dotted #ffffff;
+}
+img.responsive-img {
+    height: auto;
+    max-width: 100%;
+    border: 2px dotted royalblue;
 }
 .white-text {
     color: #fff !important;
 }
 .card-panel.z-depth-1.blue{
     margin: -0.7rem 0 1rem 0;
-    background-image: url("")
+    
+}
+
+.card-panel.repoBtn {
+    text-align: center;
+    background-color: #ffffff24;
+}
+
+.repos{
+    background-color: #ffffff24;
+    margin-bottom: -4px;
+}
+
+.description{
+    float: left;
+    margin-right:10px;
+}
+
+.fourBtn{
+    background-color: #ffffff24;
+}
+
+nav {
+    color: #fff;
+    width: 100%;
+    background-color: #ffffff1f;
+}
+
+.nav-wrapper{
+    margin-right: 20px;
+}
+nav a {
+    color: #000000;
+    margin-left: 40px;
+}
+nav a:hover {
+    color: #fff;
+}
+
+.noUser{
+    background-color: #ffffff24;
+    animation: FadeAnimation 1s ease-in .2s forwards;
+}
+
+
+@keyframes FadeAnimation {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+
+
+.brand-logo{
+    width: 200px;
+    height: 100px;
+    background-size: 28%;
+    background-position-y: 6px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-image: url("https://camo.githubusercontent.com/7710b43d0476b6f6d4b4b2865e35c108f69991f3/68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67");
+}
+
+.homeContainer{
+    margin-top: 100px;
+}
+
+.homeCard{
+    padding: 20px;
+    line-height: 6;
+    background-color: #00000073;
+}
+.homeCard span{
+    text-align: center;
+}
+
+.card .card-content p {
+    margin: 0;
+    line-height: 3;
+    text-align: justify;
+}
+
+
+@keyframes homeImgFadeAnimation {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+
+
+.homeImg{
+    background-image: url("https://octodex.github.com/images/bouncercat.png");
+    margin: auto;
+    width: 500px;
+    height: 200px;
+    box-shadow: 0px 0px;
+    background-size: 40%;
+    background-position-y: 60%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-color: #fa217d00;
+    animation: homeImgFadeAnimation 3s ease-in .2s forwards;
+}
+
+.fade-enter{
+    opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active{
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+.fade-exit{
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active{
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.transition-group{
+    position: relative;
+}
+
+section.route-section{
+    width: 100%;
+    position: absolute;
+}
+
+.contactContainer{
+    padding: 20px;
+    margin-top:60px;
+}
+
+
+.contactImg{
+    padding: 10px;
+    border-radius: 3%;
+}
+
+.social{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.fa-github{
+    color:black;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+.fa-linkedin{
+    color: #0077B5;
+}
+.contactNameBtn{
+    font-size: 1.2vw;
+    margin-bottom: 10px;
+    background-color: #20008469;
+}
+
+
+@media only screen and (max-width: 992px){
+    nav .brand-logo{
+        left: 20%;
+        height: 100px;
+        width: 180px;
+        margin-left: -5px;
+    }    
+
+}
+
+@media only screen and (max-width: 635px){
+    .repos span , .repos a{
+        width: 40px;
+        font-size: 10px;
+        text-align: center;
+        display: inline-block;
+    }
+
+.collection  {
+    margin-left: -120px;
+}
+
+.darken-3{
+    width: 150px;
+    font-size: 10px;
+    line-height: 2.1;
+    margin-left: -10px;
+    
+}
+.viewProfile{
+    width: 150px;
+    font-size: 10px;
+    margin-left: -10px;
+}
+.repoBtn{
+    width: 200px;
+    margin-left: 20px;
+    margin-bottom: -15px;
+}
+.repoBtn button{
+    width: 150px;
+    font-size: 10px;
+}
+nav .brand-logo{
+    height: 80px;
+    width: 150px;
+}
+.search{
+    height: 190px;
+}
+img.responsive-img {
+    max-width: 120%;
+    margin-top: 15px;
+    margin-left: -5px;
+}
+
+.contactNameBtn{
+    width: 100px;
+    font-size: 10px;
+    line-height: 1.8;
+    margin-left: -20px;
+    background-color: #20008433;
+}
+.portfolioBtn{
+    width: 100px;
+    font-size: 10px;
+    margin-left: -20px;
+    
+}
+.contactContainer .contactImg{
+    margin-left: -20px;
+}
+.row .col.s6 {
+    left: auto;
+    right: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-bottom: 0px;
+}
+h4 {
+    font-size: 1.7rem;
+    line-height: 110%;
+    margin: 1.52rem 0 .912rem 0;
+}
+.submitBtn{
+    width: 190px;
+    margin-left: 0px;
+    background-color: #20008433;
+}
+ .fa-github{
+    margin-left: -30px;
+}
+    
 }

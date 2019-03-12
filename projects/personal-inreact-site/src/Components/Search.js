@@ -1,28 +1,30 @@
-import React,{Component} from 'react'
+import React from 'react'
+import Header from './Header.js'
+import Repo from './Repo.js'
+import Profile from './Profile.js'
+import {withUser} from '../context/UserProvider.js'
+const Search = (props) => {
+    const {user,reposResponse} = props
+    const mappedRepos = reposResponse.map((repo,i) => <Repo key={i} repo = {repo} />)
+    return(
+        <div>
+            <Header />
+            { 
+                (user)?
 
-class Search extends Component{
-    constructor(){
-        super()
-        this.state = {
-            input:""
-        }
-    }
+                <>
+                <Profile />
+                <div className="container">
+                    <button className="btn disabled latest-respos">Latest Respos</button>
+                    {mappedRepos}
+                </div>
+                </>:
+                console.log('user not found')  
+            }
+        </div>
+    )
     
-
-    render(){
-        return(
-            <div></div>
-                // <div>
-                //     <h1>Search: </h1>
-                //     <input type="text" name="" value={this.state.input} onChange = {this.handleChange}/>
-
-                // </div>
-            )
-    }
-
 }
 
 
-
-
-export default Search
+export default withUser(Search)
