@@ -8,7 +8,7 @@ the their last 5 repositories. Otherwise, if there is no user with that
 username, it will let you know that user not found.
 
 <img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/1.png?raw=true"/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
+<img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/2.png?raw=true"/>
+<img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/3.png?raw=true"/>
+<img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/4.png?raw=true"/>
 =======
