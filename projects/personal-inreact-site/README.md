@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GitHub User Finder
 I am a Github user finder. I am very good at finding all the user at GitHub.
 You can find any random GitHub user and see their work. Just use Search tab 
@@ -10,3 +11,6 @@ username, it will let you know that user not found.
 <img src=""/>
 <img src=""/>
 <img src=""/>
+=======
+
+>>>>>>> ff39219da507376d6815720f0cbb7330fc368255
