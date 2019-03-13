@@ -1,16 +1,20 @@
-<<<<<<< HEAD
+
 # GitHub User Finder
-I am a Github user finder. I am very good at finding all the user at GitHub.
-You can find any random GitHub user and see their work. Just use Search tab 
-and start typing any username. by pressing each key, if there is any Github 
-username matches with that character(username), you will see the profile and 
-the their last 5 repositories. Otherwise, if there is no user with that 
-username, it will let you know that user not found.
+## V School Personal React Site
 
-<img src=""/>
-<img src=""/>
-<img src=""/>
-<img src=""/>
+Project Requirements: https://coursework.vschool.io/personal-react-site/ 
+
+In this project I used the GitHub API. on each key I'm making a http get 
+request to check if there is any user matches with that key and if you keep
+typing character, it will find a new user. if there is no user match with 
+that username, it will alert you that couldn't found any user.
+I used the axios library to make client-side HTTP request. Also I used the
+React Context, HOC (Higher Order Component) and React CSS Transition Group.
+the APP is totally responsive. 
+
+
+<img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/1.png?raw=true"/>
+<img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/2.png?raw=true"/>
+<img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/3.png?raw=true"/>
+<img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/4.png?raw=true"/>
 =======
-
->>>>>>> ff39219da507376d6815720f0cbb7330fc368255
