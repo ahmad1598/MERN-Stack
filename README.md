@@ -12,5 +12,3 @@ Files: https://github.com/ahmad1598/MERN-Stack/tree/master/projects/personal-inr
 
 <img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/2.png?raw=true"/>
 <img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/3.png?raw=true"/>
-
-
