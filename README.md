@@ -5,7 +5,7 @@
 
 
 # GitHub User Finder
-## V School Personal React Web Site Project
+## Personal React Web Site Project
 Files: https://github.com/ahmad1598/MERN-Stack/tree/master/projects/personal-inreact-site 
 
 <img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/2.png?raw=true"/>
