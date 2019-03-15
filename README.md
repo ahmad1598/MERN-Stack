@@ -14,8 +14,9 @@ Files: https://github.com/ahmad1598/MERN-Stack/tree/master/projects/personal-inr
 <img src="https://github.com/ahmad1598/MERN-Stack/blob/master/projects/personal-inreact-site/img/3.png?raw=true"/>
 
 
-<h1>Changing Themes using React Context </h1>
+# Changing Themes using React Context
 <hr>
-
-<img src="./src/img/dark.png" />
-<img src="./src/img/light.png" />
+Files: https://github.com/ahmad1598/MERN-Stack/tree/master/exercises/change-themese-using-context 
+<hr>
+<img src="https://github.com/ahmad1598/MERN-Stack/raw/master/exercises/change-themese-using-context/src/img/dark.png" />
+<img src="https://github.com/ahmad1598/MERN-Stack/raw/master/exercises/change-themese-using-context/src/img/light.png" />
