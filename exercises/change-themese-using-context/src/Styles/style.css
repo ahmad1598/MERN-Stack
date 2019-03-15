@@ -103,7 +103,7 @@
     background-position-x: 125px;
     background-color: #f443368c;
     border:2px dashed white;
-    background-image: url("http://my.eqla3.com/275423/751/11/%D8%A7%D8%AF%D9%88%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AF%D8%B1%D8%B3%20%D8%A7%D9%84%D8%AA%D8%A7%D8%B3%D8%B9/kelk%20fonts/%D8%AE%D8%B7%D9%88%D8%B7%20%D8%A7%D9%84%D9%83%D9%84%D9%83/%D9%87%D9%80%20%D9%88%D9%84%D9%88%D8%A7%D8%AD%D9%82%D9%87%D8%A7/%D9%87.png")
+    background-image: url('../img/h.png')
 }
 .navInfo-dark p{
     width: 100px;
@@ -258,7 +258,7 @@
     margin: auto;
     margin-bottom: 20px;
     background-size: cover;
-    background-position-y: -230px;
+    background-position-y: -55px;
     border:8px double #ffffffbd;
     background-image: url("https://lh3.googleusercontent.com/Wib44lHTAHXA6BPw4Mv8bXwk8ZNq-AplhZvEUMGjxuU_u-jzj6vAdVSwmMKNU74qSVZJ848ZBZfyHtDfppAAO6yuTEqJ5zSJ3WUSBL8_g1Hg-45gEzLA8YG5yFMzTuqFS0NHTGKxrgmfjT3rFro7Pa0Z5vtjOjLgrZFijE1T7mfa2JjWxP3CWdXoXMiIVCeatPeo7FpuPGIJ6SOft--bJvQTaONDUWO3pBqsHNdyaEU8U18JNuxpR855_IBwfR-Xl0_d7MPEgYz9DLOLAY97fHhfMbnsi1MkM55HQqFqmcelAoTT-pVrVcFDwohUxcBB6FnuogSE1xNDKoNQ4spbWGQJLbINdYtNcP4G1PDur6FgaJfE9wDuAEVAfhTGm0BQXaX3RkRbSkQIbtzs62glChrXm2uhspa14NMaW55iGRAzj68_xHsi_I2DFvrO_FTRPHOmy0FUpaaqH3kqx1toYBByCk3TK-NtW0p5sOPvpYJUPFTh3G8PoWIYuz7kv42R1ahAsaBuRgL3BSB6UEc9n4Es7OLdPmdzWz-voGGD9e7j_4z8JYJloqnGTkeU7mHkSazvypM25e1o3IHp43Bh-1SDNJEqPtpkbcCqf4Yz5cBDiPXriDkOxTP62Mt-vQO2abwd2Hrw3ewSfQH4fTB58d4s-dhMqwU=w738-h1596-no");
 }
