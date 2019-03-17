@@ -8,6 +8,6 @@
 - http://coursework.vschool.io/bounty-hunting-with-mongoose/
 
 
-<img src="./src/img/1.png"/>
-<img src="./src/img/2.png"/>
-<img src="./src/img/3.png"/>
+<img src="./client/src/img/1.png"/>
+<img src="./client/src/img/2.png"/>
+<img src="./client/src/img/3.png"/>
