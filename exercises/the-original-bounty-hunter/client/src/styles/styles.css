@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+
+    background-color: #0000005c;
+    background-blend-mode: luminosity;
+    /* background-image: url("https://vignette.wikia.nocookie.net/starwars/images/a/a3/Finalizer_hangar.jpg/revision/latest?cb=20160403043031"); */
+    /* background-image: url("https://media.giphy.com/media/12fEL2g4qbxqSs/giphy.gif"); */
+    background-image: url("https://www.fuze.com/blog/files/iStock-474395892_1.jpg");
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.header{
+    background-color: #0000008f;
+    background-blend-mode: lighten;
+    background-image: url("../img/star-wars.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 250px;;
+    background-position-x: 450px;
+    background-position-y: -30px;
+    /* opacity: .25; */
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: absolute;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.secondRow {
+    width: 33.3333333333%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    height: 54px;
+}
+.first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteEdit{
+    display: flex;
+    justify-content: space-between;
+    /* float: right; */
+    margin-top: 10px;
+    /* padding: 10px; */
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gray;
+    opacity: 1; /* Firefox */
+  }
+
+  .inputContainer{
+      margin-top: 10px;
+      background-color: #3d4d69b8;
+      box-shadow: 0px 0px 30px;
+      /* border: 1px solid white; */
+  }
+
+  .resultContainer{
+    box-shadow: 0px 0px 30px;
+    /* border: 1px solid white; */
+  }
+
+  .jedi{
+    background-color: #89f1f0bd;
+  }
+
+  .sith{
+    background-color: #ff5722a6;
+  }
