@@ -7,30 +7,31 @@ body{
 
     background-color: #0000005c;
     background-blend-mode: luminosity;
-    /* background-image: url("https://vignette.wikia.nocookie.net/starwars/images/a/a3/Finalizer_hangar.jpg/revision/latest?cb=20160403043031"); */
-    /* background-image: url("https://media.giphy.com/media/12fEL2g4qbxqSs/giphy.gif"); */
     background-image: url("https://www.fuze.com/blog/files/iStock-474395892_1.jpg");
-    /* background-size: cover; */
     background-repeat: no-repeat;
     background-attachment: fixed;
 
 }
 .header{
     background-color: #0000008f;
+    background: linear-gradient(45deg, #011e52b8, #af0000a8);
+    animation: Gradient 15s ease infinite;
     background-blend-mode: lighten;
-    background-image: url("../img/star-wars.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    height: 250px;;
-    background-position-x: 450px;
-    background-position-y: -30px;
-    /* opacity: .25; */
+    background-image: url("../img/star-wars.png" );
+    background-attachment: fixed; 
+    height: 250px;
+
+
 }
 
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-    position: absolute;
-    opacity: 1;
-    pointer-events: none;
+    position: static!important;
+    left: 0px!important;
+    opacity: 1!important;
+    visibility: visible!important;
+    pointer-events: all!important;
+    width: 20px;
+    height: 20px;
 }
 
 .secondRow {
@@ -49,32 +50,68 @@ body{
 .deleteEdit{
     display: flex;
     justify-content: space-between;
-    /* float: right; */
     margin-top: 10px;
-    /* padding: 10px; */
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
     color: gray;
-    opacity: 1; /* Firefox */
+    opacity: 1; 
   }
 
-  .inputContainer{
+  .addContainer{
       margin-top: 10px;
-      background-color: #3d4d69b8;
+      background: linear-gradient(-45deg, #3d4d69b8, #000000a8);
+      background-size: 400% 400%;
+      animation: Gradient 15s ease infinite;
       box-shadow: 0px 0px 30px;
       /* border: 1px solid white; */
   }
+    .editContainer{
+        margin-top: 10px;
+        background-color: #3d4d69b8;
+        box-shadow: 0px 0px 30px;
+    }
+    .container.editContainer.hoverable {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 32vw;
+        height: 28vh;
+        padding: 1px;
+    }
 
   .resultContainer{
     box-shadow: 0px 0px 30px;
-    /* border: 1px solid white; */
   }
 
+
+  @keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+} 
+
   .jedi{
-    background-color: #89f1f0bd;
+    background: linear-gradient(-45deg, #0070a3, #00b0ff, #0099ff34, #ec18ff);
+	background-size: 400% 400%;
+	animation: Gradient 15s ease infinite;
+    
   }
 
   .sith{
-    background-color: #ff5722a6;
+    /* background-color: #ff5722a6; */
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #ff5722a6, #23D5AB);
+    background-size: 400% 400%;
+	animation: Gradient 15s ease infinite;
   }
+
+  a.btn-floating.btn-small.pink.darken-3 {
+    position: absolute;
+    margin-top: -45%;
+    margin-left: 88%;
+}

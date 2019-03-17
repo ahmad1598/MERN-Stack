@@ -3,8 +3,8 @@ import React from 'react'
 const AddBounty = (props) => {
     const {handleSubmit,handleChange,firstName,lastName,isLiving,bountyAmount,type,btnText} = props
     return (
-        <div className="container inputContainer hoverable">
-            <div className="row ">
+        <div className={`container ${!props.editToggle ? "addContainer" : "editContainer"}  hoverable `}>
+            <div className="row">
                 <form className="col s12 " onSubmit={handleSubmit}>
                    
                     <div className="input-field col s6">
@@ -25,14 +25,17 @@ const AddBounty = (props) => {
                             value={lastName} />
                     </div>
 
-                    <div className="input-field col s4 secondRow first ">
-                        <label className="black-gray">Living</label> 
+                    <p className="input-field col s4 secondRow first">
                         <input 
+                            
                             type="checkbox" 
                             name="isLiving" 
                             checked={isLiving} 
+                            
                             onChange={handleChange}/>
-                    </div>
+                    <label className="black-gray">Living</label> 
+                            
+                    </p>
 
                     <div className="input-field col s4 secondRow">
                         <input 
@@ -45,7 +48,7 @@ const AddBounty = (props) => {
 
                     <div className="input-field col s4 secondRow">
                         <input 
-                            placeholder="Type" 
+                            placeholder="Type - ( jedi / sith )" 
                             type="text" 
                             name="type" 
                             value={type} 
@@ -61,11 +64,3 @@ const AddBounty = (props) => {
 
 
 export default AddBounty
-
-
-// // firstName: "Mace",
-// lastName: "Windu",
-// Living: true,
-// bountyAmount: 1000,
-// type: "Jedi",
-// _id: uuid()

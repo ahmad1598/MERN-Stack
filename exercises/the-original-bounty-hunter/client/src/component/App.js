@@ -22,7 +22,6 @@ class App extends Component {
 
     
     handleChange = e => {
-        // const {type,name} = e.target;
         const value = e.target.type === 'checkbox' 
             ? e.target.checked 
             : e.target.value;

@@ -8,7 +8,7 @@ class Bounty extends Component {
             firstName:props.firstName,
             lastName: props.lastName,
             isLiving: props.isLiving,
-            bountAmount: props.bountAmount,
+            bountyAmount: props.bountyAmount,
             type: props.type
         }
     }
@@ -34,7 +34,7 @@ class Bounty extends Component {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             isLiving: this.state.isLiving,
-            bountAmount: this.state.bountAmount,
+            bountyAmount: this.state.bountyAmount,
             type: this.state.type
         }
         this.props.updateBounty(this.props._id,bountyUpdate)
@@ -42,19 +42,28 @@ class Bounty extends Component {
     }
     
     render(){
-        const {firstName,lastName,isLiving,bountAmount,type,deleteBounty,_id} = this.props
+        const {firstName,lastName,bountyAmount,type,deleteBounty,_id} = this.props
         return(
             <div className="col s6 hoverable">
                 <div className={`card ${type === "Jedi" ? "jedi" : "sith"} darken-1`}>
                     {
                         !this.state.editToggle ?
                             <>
-                                <div class="card-content white-text">
-                                    <span className="card-title">{firstName}</span>
-                                    <p>{lastName}</p>
+                                <div class="card-content black-text">
+                                    <span className="card-title">First Name: {firstName}</span>
+                                    <p>Last Name: {lastName}</p>
+                                    <span>Bount Amount: {bountyAmount}</span>
                                     <div className="deleteEdit">
-                                        <a href="#" onClick={() => deleteBounty(_id)} className="btn-floating btn-small pink accent-4"><i className="material-icons">delete</i></a>
-                                        <a href="#" onClick={this.toggler} className="btn-floating btn-small blue darken-3"><i className="material-icons">edit</i></a>
+                                        <a href="#" 
+                                            onClick={() => deleteBounty(_id)} 
+                                            className="btn-floating btn-small pink accent-4">
+                                            <i className="material-icons">delete</i>
+                                        </a>
+                                        <a href="#" 
+                                            onClick={this.toggler} 
+                                            className="btn-floating btn-small blue darken-3">
+                                            <i className="material-icons">edit</i>
+                                        </a>
                                     </div>
                                 </div>
                             </>
@@ -66,7 +75,11 @@ class Bounty extends Component {
                                     btnText = "Submit Edit"    
                                     {...this.state}
                                 />
-                                <a href="#" onClick={this.toggler} className="btn-floating btn-small blue darken-3"><i className="material-icons">close</i></a>
+                                <a href="#" 
+                                    onClick={this.toggler} 
+                                    className="btn-floating btn-small pink darken-3">
+                                    <i className="material-icons">close</i>
+                                </a>
                             </>
                     }
                 </div>
