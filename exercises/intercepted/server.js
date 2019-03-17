@@ -3,47 +3,19 @@ const app = express()
 const morgan = require('morgan')
 const uuid = require('uuid/v4')
 
-const users = [
-    {
-        firstName:"John",
-        lastName: "Doe",
-        age:30,
-        gender:"Male",
-        _id: uuid()
-    },
-    {
-        firstName:"Steve",
-        lastName: "Smith",
-        age:21,
-        gender:"Male",
-        _id: uuid()
-    },
-    {
-        firstName:"Jessica",
-        lastName: "Moral",
-        age:41,
-        gender:"Female",
-        _id: uuid()
-    },
-    {
-        firstName:"Aria",
-        lastName: "johnson",
-        age:15,
-        gender:"Female",
-        _id: uuid()
-    }
-]
 
 
-//Middlewares
-app.use(express.json())
-app.use(morgan('dev'))
+// app.use(express.json())
+// app.use(morgan('dev'))
 
+// on this line we are telling if any request comes, go check the userRoutes file
+app.use(require('./routes/userRoutes.js'))
 
-//Route
-app.get("/users",(req,res) => {
-    res.send(users)
+//by running next() on the userRoutes file, it will come and run the code below
+app.use((req,res) => {
+    res.send(req.newUserObj)
 })
+
 
 
 //listen
