@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route , Redirect} from 'react-router-dom'
 import Auth from './Auth.js'
 import {withUser} from './context/UserProvider.js'
 import PostList from './PostList.js'
-
+import ProtectedRoute from './ProtectedRoute.js'
 class App extends Component {
 
     render(){
         const {token, logout} = this.props
         return(
             <div>
+                {/* {!token && <button onClick={() => this.props.history.push("/auth")}>Login</button>} */}
                 {token && <button onClick={logout}>Logout</button>}
                 <Switch>
                     {/* here we are saying that my home route "/" loads Auth component */}
@@ -17,9 +18,26 @@ class App extends Component {
                     {/* if we were using component instead of render, routerProps will be passing be default but because we are using render here we have to pass rProps as a function manualy to our Auth component */}
                     {/* and we are using render because we don't want to user put some url in address bar and go to that specific page without login  */}
                     {/* by using render we will be able to ask question to see if the user login then direct them to that page otherwise redirect to login page */}
-                    <Route exact path="/" render ={rProps => <Auth {...rProps} /> } />
+                    <Route 
+                        exact 
+                        path="/" 
+                        render ={rProps => 
+                            token 
+                                ? <Redirect to="/posts" />  
+                                : <Auth {...rProps} /> } />
                     {/* here we are saying that my posts route "/posts" loads PostList component */}
-                    <Route path="/posts" render ={rProps => <PostList {...rProps} /> } />
+                    {/* <Route path="/posts" render ={rProps => <PostList {...rProps} /> } /> */}
+                    <ProtectedRoute 
+                        path={"/posts"} 
+                        redirectTo = "/" 
+                        component = {PostList} />
+                    
+                    <ProtectedRoute 
+                        path="*" 
+                        redirectTo = "/posts" 
+                        // you need to create NotFound component
+                        component = {NotFound} />
+
                 </Switch>
             </div>
         )

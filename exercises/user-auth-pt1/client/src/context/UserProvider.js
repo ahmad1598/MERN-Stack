@@ -25,7 +25,8 @@ class UserProvider extends Component {
         this.state = {
             user:JSON.parse(localStorage.getItem("user")) || {},
             token:localStorage.getItem("token") ||  "",
-            posts:[]
+            posts:[],
+            errorMessage: "",
         }
     }
 
@@ -38,12 +39,12 @@ class UserProvider extends Component {
                 localStorage.setItem("token", token)
 
                 this.setState({
-                    user, token
+                    user, token, errorMessage:""
                     //this below callback function is running when the data came back and state has been updated. just to make sure that our data came back
                     // and direct user to the posts page. we assign posts route on app.js
                 }, () => this.props.history.push("/posts"))
             }) 
-            .catch( err => console.log(err.response.data.errMsg))
+            .catch( err => this.setState({errorMessage: err.response.data.errMsg}))
     }
 
     login = credentials => {
@@ -55,10 +56,10 @@ class UserProvider extends Component {
                 localStorage.setItem("user" , JSON.stringify(user))
                 localStorage.setItem("token", token)
                 this.setState({ 
-                    user, token
+                    user, token, errorMessage:""
                 }, () => this.props.history.push("/posts"))
             })
-            .catch( err => console.log(err.response.data.errMsg))
+            .catch( err => this.setState({errorMessage: err.response.data.errMsg}))
     }
 
     logout = () => {

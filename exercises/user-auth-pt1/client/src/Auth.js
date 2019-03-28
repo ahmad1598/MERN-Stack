@@ -22,6 +22,14 @@ class Auth extends Component {
         })
     }
 
+    clearInputs = () => {
+        this.setState({
+            username: "",
+            password: "",
+            errorMessage: ""
+        })
+    }
+
     handleLoginSubmit = e => {
         e.preventDefault()
 
@@ -31,6 +39,10 @@ class Auth extends Component {
         }
         
         this.props.login(credentials)
+            // .then(() => this.clearInputs())
+            // .catch(err => {
+            //     this.setState({errorMessage: err.response.data.message})
+            // })
 
         this.setState({
             username: "",
@@ -48,6 +60,10 @@ class Auth extends Component {
         }
 
         this.props.signup(credentials)
+            // .then(() => this.clearInputs())
+            // .catch(err => {
+            //     this.setState({errorMessage: err.response.data.message})
+            // })
 
         this.setState({
             username: "",
@@ -69,7 +85,10 @@ class Auth extends Component {
                         handleSubmit={this.handleSignupSubmit}
                         btnText="Sign Up"    
                     />
+                    
                     <p onClick={this.toggleForm}>Already a User?</p>
+                    {/* this.state.errorMessage &&
+                        <p style ={{color:"red"}}>{this.state.errorMessage}</p> */}
                 </>
                 :
                 <>
@@ -81,6 +100,7 @@ class Auth extends Component {
                         handleSubmit={this.handleLoginSubmit}
                         btnText="Login"    
                     />
+                    <p style ={{color:"red"}}>{this.props.errorMessage}</p>
                     <p onClick={this.toggleForm}>Not a User yet?</p>
                 </>
                 }

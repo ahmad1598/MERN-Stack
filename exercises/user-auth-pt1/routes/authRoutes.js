@@ -26,9 +26,9 @@ authRouter.post("/signup" , (req,res,next) => {
             }
 
             //create a token
-            const token = jwt.sign(savedUser.toObject(), process.env.SECRET)
+            const token = jwt.sign(savedUser.withoutPassword(), process.env.SECRET)
             //send the user back to front end
-            return res.status(201).send({ user: savedUser.toObject(), token })
+            return res.status(201).send({ user: savedUser.withoutPassword(), token })
         })
     })
 })
@@ -40,15 +40,32 @@ authRouter.post("/login" , (req,res,next) => {
             res.status(500)
             return next(err)
         }
-        //Does the user not exist or does the existing user's password not match the requesting password
-        if(!user || user.password !== req.body.password){
+
+        if(!user){
             res.status(403)
             return next(new Error("Username or Password are incorrect"))
         }
+        //Does the user not exist or does the existing user's password not match the requesting password
+        // if(!user || user.password !== req.body.password){
+        //     res.status(403)
+        //     return next(new Error("Username or Password are incorrect"))
+        // }
 
-        const token = jwt.sign(user.toObject(), process.env.SECRET)
-        return res.status(200).send({ user: user.toObject(), token })
 
+        user.checkPassword(req.body.password, (err, match) => {
+            if(err){ 
+                res.status(500)
+                return next(err)
+            } 
+            if(!match){
+                res.status(401)
+                return next(new Error("Username or Password are incorrect"))
+            }
+
+            const token = jwt.sign(user.withoutPassword(), process.env.SECRET)
+            return res.status(200).send({ user: user.withoutPassword(), token })
+
+        })
     })
 })
 
