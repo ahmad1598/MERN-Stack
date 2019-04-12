@@ -46,39 +46,37 @@ class Contact extends Component{
                 <div className="col s4">
                     <img className="z-depth-2 responsive-img  contactImg" src={url} alt=""/>
                     <a className="btn contactNameBtn btn-block">Ahmad Rasoulpour</a> 
-                    <a className="btn blue darken-1 btn-block portfolioBtn">PORTFOLIO</a> 
-                    <div className="social">
-                        <a href="https://github.com/ahmad1598" target="_blank" rel="noopener noreferrer"><i className="fab fa-github fa-2x"></i></a>
-                        <a href="https://www.linkedin.com/in/ahmad-rasoulpour" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin fa-2x"></i></a>
-                    </div>
+                    <a className="btn blue darken-1 btn-block portfolioBtn" href="https://docs.google.com/document/d/1tZ3LqudwpvPvtcWpLD698m7PgI7qNJvs67iojbmSWYU/edit?usp=sharing" target="_blank">Resume</a> 
                 </div>
-
-
-                <form className="col s8" onSubmit={this.handleSubmit}>
+                <br/><br/>
+                <div className="col s8">
                     <div className="row">
-                        <h4 className="center">Contact Form</h4>
-                        <div className="input-field col s6">
-                            <input placeholder="First Name" name="title" value={this.state.title} type="text" onChange={this.handleChange} />
-                        </div>
-                        <div className="input-field col s6">
-                            <input placeholder="Last Name" name="description" value={this.state.description} type="text" onChange={this.handleChange}/>
+                        <div className="container">
+                            <p>
+                                <a href="mailto: ahmad.raman83@yahoo.com" className="btn-floating btn-flat waves-effect waves-light light-blue darken-3"><i className="fa fa-envelope"></i></a>
+                                <a href="mailto: ahmad.raman83@yahoo.com" className="black-text" > ahmad.raman83@yahoo.com</a>
+                            </p>
+                            <br/>
+                            <hr/>
+                            <br/>
+                            <p>
+                                <a href="https://github.com/ahmad1598" className="btn-floating btn-flat waves-effect waves-light light-blue darken-3"><i className="fab fa-github"></i></a>
+                                <a href="https://github.com/ahmad1598" className="black-text"> github.com/ahmad1598 </a>
+                            </p>
+                            <br/>
+                            <hr/>
+                            <br/>
+                            <p>
+                                <a href="https://www.linkedin.com/in/ahmad-rasoulpour/" className="btn-floating btn-flat waves-effect waves-light light-blue darken-3"><i className="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/ahmad-rasoulpour/" className="black-text"> linkedin.com/in/ahmad-rasoulpour </a>
+                            </p>
+                            <br/>
+                            <hr/>
+                            <br/>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <input placeholder="Email Address" id="email" type="email" name="email" value={this.state.email} onChange={this.handleChange}/>
-                        </div>
-                        <div className="input-field col s6">
-                            <input placeholder="Phone Number" id="phone" type="number" name="phone" value={this.state.phone} onChange={this.handleChange}/>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="input-field col s12">
-                        <textarea placeholder="Message" id="textarea1" className="materialize-textarea" name="message" value={this.state.message} onChange={this.handleChange}></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" className="btn btn-block submitBtn">Submit</button>
-                </form>
+                    
+                </div>
             </div>
         </div>
         )

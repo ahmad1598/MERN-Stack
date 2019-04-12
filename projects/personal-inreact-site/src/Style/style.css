@@ -214,6 +214,11 @@ section.route-section{
     margin-top:60px;
 }
 
+i.fab.fa-github {
+    font-size: 2rem;
+    margin-left: 0px;
+}
+
 
 .contactImg{
     padding: 10px;
@@ -258,6 +263,11 @@ section.route-section{
         font-size: 10px;
         text-align: center;
         display: inline-block;
+    }
+    
+    .light-blue.darken-3 {
+        background-color: #0277bd !important;
+        width: 41px;
     }
 
 .collection  {
