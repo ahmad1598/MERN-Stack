@@ -6,9 +6,7 @@ const Home = () => {
                     <div className="card homeCard">
                         <div className="card-content">
                             <span className="card-title">GitHub User Finder</span>
-                            <p>I am a Github user finder. I am very good at finding all the user at GitHub.
-                                You can find any random GitHub user and see their work. Just use Search tab and start typing any username. by pressing each key, if there is any Github username matches with that character(username), you will see the profile and the their last 5 repositories. 
-                                Otherwise, if there is no user with that username, it will let you know that user not found.
+                            <p>Designed and developed application with GitHub API where give a user access to be able to search all the GitHub users by username. The user would be able to search, and the result would be including profile, all their information and their list of repositories and user will be able to link to them. 
                             </p>
                         </div>
                     </div>
